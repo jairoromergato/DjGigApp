@@ -28,7 +28,6 @@ struct GigFormView: View {
     @State private var importMessage: String? = nil
 
     @Environment(\.dismiss) private var dismiss
-//    @Environment(\.modelContext) private var context
 
     // MARK: - Init
     init(gig: Gig? = nil, onSave: @escaping (Gig) -> Void) {
@@ -243,8 +242,12 @@ struct GigFormView: View {
 
     // MARK: - Tracks helpers
     private func addTrack(_ track: Track) {
-        if !selectedTracks.contains(where: { $0.id == track.id }) {
-            selectedTracks.append(track)
+        withAnimation {
+            if !selectedTracks.contains(where: { $0.id == track.id }) {
+                selectedTracks.append(track)
+            } else {
+                selectedTracks.removeAll(where: { $0.id == track.id })
+            }
         }
     }
 
@@ -385,33 +388,21 @@ struct FlexibleChipWrap<Data: RandomAccessCollection, Content: View>: View where
         self.content = content
     }
     @Environment(\.modelContext) private var context
+    
+    let rows = [
+        GridItem(.flexible(minimum: 10, maximum: 100)),
+        GridItem(.flexible(minimum: 10, maximum: 100)),
+        GridItem(.flexible(minimum: 10, maximum: 100))
+    ]
+    
     var body: some View {
         var width: CGFloat = 0
         var height: CGFloat = 0
-
-        return GeometryReader { geometry in
-            ZStack(alignment: .topLeading) {
-                ForEach(data) { item in
-                    content(item)
-                        .padding(.trailing, 8)
-                        .alignmentGuide(.leading) { d in
-                            if width + d.width > geometry.size.width {
-                                width = 0
-                                height -= d.height
-                            }
-                            let result = width
-                            width += d.width
-                            return result
-                        }
-                        .alignmentGuide(.top) { d in
-                            let result = height
-                            return result
-                        }
-                }
+        return LazyVGrid(columns:rows, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            ForEach(data) { item in
+                content(item)
             }
-        }
-        .frame(minHeight: 0, alignment: .topLeading)
-        .padding(.vertical, 4)
+        })
     }
 }
 
