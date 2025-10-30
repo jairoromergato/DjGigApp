@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3809AB992EB3608A005E541F /* DJGigsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB982EB3608A005E541F /* DJGigsAppApp.swift */; };
+		3809AB992EB3608A005E541F /* DJGigsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB982EB3608A005E541F /* DJGigsApp.swift */; };
 		3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB9A2EB3608A005E541F /* ContentView.swift */; };
 		3809AB9D2EB36091005E541F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3809AB9C2EB36091005E541F /* Assets.xcassets */; };
 		3809ABA02EB36091005E541F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3809AB9F2EB36091005E541F /* Preview Assets.xcassets */; };
@@ -16,6 +16,18 @@
 		3809ABAF2EB36092005E541F /* DJGigsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABAE2EB36092005E541F /* DJGigsAppTests.swift */; };
 		3809ABB92EB36092005E541F /* DJGigsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABB82EB36092005E541F /* DJGigsAppUITests.swift */; };
 		3809ABBB2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABBA2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift */; };
+		3809ABC92EB36127005E541F /* gig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABC82EB36127005E541F /* gig.swift */; };
+		3809ABD02EB381CA005E541F /* GigListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABCF2EB381CA005E541F /* GigListView.swift */; };
+		3809ABD22EB38414005E541F /* GigForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD12EB38414005E541F /* GigForView.swift */; };
+		3809ABD42EB3878F005E541F /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD32EB3878F005E541F /* AppTheme.swift */; };
+		3809ABD62EB387BE005E541F /* ThemedStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD52EB387BE005E541F /* ThemedStyles.swift */; };
+		3809ABDA2EB39E1E005E541F /* DurationPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD92EB39E1E005E541F /* DurationPickerSheet.swift */; };
+		3809ABDC2EB3A39A005E541F /* DurationWheelOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABDB2EB3A39A005E541F /* DurationWheelOverlay.swift */; };
+		3809ABE02EB3A8C5005E541F /* DurationWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABDF2EB3A8C5005E541F /* DurationWheelPicker.swift */; };
+		3809ABE22EB3AADE005E541F /* CenteredDurationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABE12EB3AADE005E541F /* CenteredDurationModal.swift */; };
+		3809ABE42EB3AE62005E541F /* TrackChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABE32EB3AE62005E541F /* TrackChip.swift */; };
+		3809ABE72EB3AEB4005E541F /* TrackSearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABE62EB3AEB4005E541F /* TrackSearchList.swift */; };
+		3809ABE92EB3AFB2005E541F /* RekordboxImported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABE82EB3AFB1005E541F /* RekordboxImported.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		3809AB952EB3608A005E541F /* DJGigsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJGigsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3809AB982EB3608A005E541F /* DJGigsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsAppApp.swift; sourceTree = "<group>"; };
+		3809AB982EB3608A005E541F /* DJGigsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsApp.swift; sourceTree = "<group>"; };
 		3809AB9A2EB3608A005E541F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3809AB9C2EB36091005E541F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3809AB9F2EB36091005E541F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -48,6 +60,18 @@
 		3809ABB42EB36092005E541F /* DJGigsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJGigsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3809ABB82EB36092005E541F /* DJGigsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsAppUITests.swift; sourceTree = "<group>"; };
 		3809ABBA2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3809ABC82EB36127005E541F /* gig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gig.swift; sourceTree = "<group>"; };
+		3809ABCF2EB381CA005E541F /* GigListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigListView.swift; sourceTree = "<group>"; };
+		3809ABD12EB38414005E541F /* GigForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigForView.swift; sourceTree = "<group>"; };
+		3809ABD32EB3878F005E541F /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		3809ABD52EB387BE005E541F /* ThemedStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedStyles.swift; sourceTree = "<group>"; };
+		3809ABD92EB39E1E005E541F /* DurationPickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerSheet.swift; sourceTree = "<group>"; };
+		3809ABDB2EB3A39A005E541F /* DurationWheelOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationWheelOverlay.swift; sourceTree = "<group>"; };
+		3809ABDF2EB3A8C5005E541F /* DurationWheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationWheelPicker.swift; sourceTree = "<group>"; };
+		3809ABE12EB3AADE005E541F /* CenteredDurationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredDurationModal.swift; sourceTree = "<group>"; };
+		3809ABE32EB3AE62005E541F /* TrackChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackChip.swift; sourceTree = "<group>"; };
+		3809ABE62EB3AEB4005E541F /* TrackSearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSearchList.swift; sourceTree = "<group>"; };
+		3809ABE82EB3AFB1005E541F /* RekordboxImported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RekordboxImported.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +102,10 @@
 		3809AB8C2EB3608A005E541F = {
 			isa = PBXGroup;
 			children = (
+				3809AB982EB3608A005E541F /* DJGigsApp.swift */,
+				3809ABE52EB3AE80005E541F /* track */,
+				3809ABC72EB360F6005E541F /* Models */,
+				3809ABCE2EB381A5005E541F /* views */,
 				3809AB972EB3608A005E541F /* DJGigsApp */,
 				3809ABAD2EB36092005E541F /* DJGigsAppTests */,
 				3809ABB72EB36092005E541F /* DJGigsAppUITests */,
@@ -98,10 +126,9 @@
 		3809AB972EB3608A005E541F /* DJGigsApp */ = {
 			isa = PBXGroup;
 			children = (
-				3809AB982EB3608A005E541F /* DJGigsAppApp.swift */,
 				3809AB9A2EB3608A005E541F /* ContentView.swift */,
-				3809AB9C2EB36091005E541F /* Assets.xcassets */,
 				3809ABA12EB36091005E541F /* Persistence.swift */,
+				3809AB9C2EB36091005E541F /* Assets.xcassets */,
 				3809ABA32EB36091005E541F /* DJGigsApp.xcdatamodeld */,
 				3809AB9E2EB36091005E541F /* Preview Content */,
 			);
@@ -131,6 +158,39 @@
 				3809ABBA2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift */,
 			);
 			path = DJGigsAppUITests;
+			sourceTree = "<group>";
+		};
+		3809ABC72EB360F6005E541F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3809ABC82EB36127005E541F /* gig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3809ABCE2EB381A5005E541F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3809ABCF2EB381CA005E541F /* GigListView.swift */,
+				3809ABD12EB38414005E541F /* GigForView.swift */,
+				3809ABD32EB3878F005E541F /* AppTheme.swift */,
+				3809ABD52EB387BE005E541F /* ThemedStyles.swift */,
+				3809ABD92EB39E1E005E541F /* DurationPickerSheet.swift */,
+				3809ABDB2EB3A39A005E541F /* DurationWheelOverlay.swift */,
+				3809ABDF2EB3A8C5005E541F /* DurationWheelPicker.swift */,
+				3809ABE12EB3AADE005E541F /* CenteredDurationModal.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3809ABE52EB3AE80005E541F /* track */ = {
+			isa = PBXGroup;
+			children = (
+				3809ABE32EB3AE62005E541F /* TrackChip.swift */,
+				3809ABE62EB3AEB4005E541F /* TrackSearchList.swift */,
+				3809ABE82EB3AFB1005E541F /* RekordboxImported.swift */,
+			);
+			path = track;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +324,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3809ABA22EB36091005E541F /* Persistence.swift in Sources */,
+				3809ABDA2EB39E1E005E541F /* DurationPickerSheet.swift in Sources */,
+				3809ABDC2EB3A39A005E541F /* DurationWheelOverlay.swift in Sources */,
+				3809ABE72EB3AEB4005E541F /* TrackSearchList.swift in Sources */,
 				3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */,
-				3809AB992EB3608A005E541F /* DJGigsAppApp.swift in Sources */,
+				3809AB992EB3608A005E541F /* DJGigsApp.swift in Sources */,
+				3809ABE92EB3AFB2005E541F /* RekordboxImported.swift in Sources */,
+				3809ABD42EB3878F005E541F /* AppTheme.swift in Sources */,
 				3809ABA52EB36091005E541F /* DJGigsApp.xcdatamodeld in Sources */,
+				3809ABE22EB3AADE005E541F /* CenteredDurationModal.swift in Sources */,
+				3809ABD22EB38414005E541F /* GigForView.swift in Sources */,
+				3809ABD62EB387BE005E541F /* ThemedStyles.swift in Sources */,
+				3809ABE02EB3A8C5005E541F /* DurationWheelPicker.swift in Sources */,
+				3809ABC92EB36127005E541F /* gig.swift in Sources */,
+				3809ABD02EB381CA005E541F /* GigListView.swift in Sources */,
+				3809ABE42EB3AE62005E541F /* TrackChip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

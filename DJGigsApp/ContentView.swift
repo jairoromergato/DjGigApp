@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  DJGigsApp
-//
-//  Created by Jairo Romero gato on 30/10/25.
-//
-
 import SwiftUI
 import CoreData
 
