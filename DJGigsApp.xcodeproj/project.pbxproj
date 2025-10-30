@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3809AB992EB3608A005E541F /* DJGigsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB982EB3608A005E541F /* DJGigsAppApp.swift */; };
+		3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB9A2EB3608A005E541F /* ContentView.swift */; };
+		3809AB9D2EB36091005E541F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3809AB9C2EB36091005E541F /* Assets.xcassets */; };
+		3809ABA02EB36091005E541F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3809AB9F2EB36091005E541F /* Preview Assets.xcassets */; };
+		3809ABA22EB36091005E541F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABA12EB36091005E541F /* Persistence.swift */; };
+		3809ABA52EB36091005E541F /* DJGigsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABA32EB36091005E541F /* DJGigsApp.xcdatamodeld */; };
+		3809ABAF2EB36092005E541F /* DJGigsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABAE2EB36092005E541F /* DJGigsAppTests.swift */; };
+		3809ABB92EB36092005E541F /* DJGigsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABB82EB36092005E541F /* DJGigsAppUITests.swift */; };
+		3809ABBB2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABBA2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3809ABAB2EB36092005E541F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3809AB8D2EB3608A005E541F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3809AB942EB3608A005E541F;
+			remoteInfo = DJGigsApp;
+		};
+		3809ABB52EB36092005E541F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3809AB8D2EB3608A005E541F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3809AB942EB3608A005E541F;
+			remoteInfo = DJGigsApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3809AB952EB3608A005E541F /* DJGigsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJGigsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3809AB982EB3608A005E541F /* DJGigsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsAppApp.swift; sourceTree = "<group>"; };
+		3809AB9A2EB3608A005E541F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3809AB9C2EB36091005E541F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3809AB9F2EB36091005E541F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3809ABA12EB36091005E541F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3809ABA42EB36091005E541F /* DJGigsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DJGigsApp.xcdatamodel; sourceTree = "<group>"; };
+		3809ABAA2EB36092005E541F /* DJGigsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJGigsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3809ABAE2EB36092005E541F /* DJGigsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsAppTests.swift; sourceTree = "<group>"; };
+		3809ABB42EB36092005E541F /* DJGigsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJGigsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3809ABB82EB36092005E541F /* DJGigsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsAppUITests.swift; sourceTree = "<group>"; };
+		3809ABBA2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3809AB922EB3608A005E541F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3809ABA72EB36092005E541F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3809ABB12EB36092005E541F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3809AB8C2EB3608A005E541F = {
+			isa = PBXGroup;
+			children = (
+				3809AB972EB3608A005E541F /* DJGigsApp */,
+				3809ABAD2EB36092005E541F /* DJGigsAppTests */,
+				3809ABB72EB36092005E541F /* DJGigsAppUITests */,
+				3809AB962EB3608A005E541F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3809AB962EB3608A005E541F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3809AB952EB3608A005E541F /* DJGigsApp.app */,
+				3809ABAA2EB36092005E541F /* DJGigsAppTests.xctest */,
+				3809ABB42EB36092005E541F /* DJGigsAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3809AB972EB3608A005E541F /* DJGigsApp */ = {
+			isa = PBXGroup;
+			children = (
+				3809AB982EB3608A005E541F /* DJGigsAppApp.swift */,
+				3809AB9A2EB3608A005E541F /* ContentView.swift */,
+				3809AB9C2EB36091005E541F /* Assets.xcassets */,
+				3809ABA12EB36091005E541F /* Persistence.swift */,
+				3809ABA32EB36091005E541F /* DJGigsApp.xcdatamodeld */,
+				3809AB9E2EB36091005E541F /* Preview Content */,
+			);
+			path = DJGigsApp;
+			sourceTree = "<group>";
+		};
+		3809AB9E2EB36091005E541F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3809AB9F2EB36091005E541F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3809ABAD2EB36092005E541F /* DJGigsAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				3809ABAE2EB36092005E541F /* DJGigsAppTests.swift */,
+			);
+			path = DJGigsAppTests;
+			sourceTree = "<group>";
+		};
+		3809ABB72EB36092005E541F /* DJGigsAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3809ABB82EB36092005E541F /* DJGigsAppUITests.swift */,
+				3809ABBA2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift */,
+			);
+			path = DJGigsAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3809AB942EB3608A005E541F /* DJGigsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3809ABBE2EB36092005E541F /* Build configuration list for PBXNativeTarget "DJGigsApp" */;
+			buildPhases = (
+				3809AB912EB3608A005E541F /* Sources */,
+				3809AB922EB3608A005E541F /* Frameworks */,
+				3809AB932EB3608A005E541F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DJGigsApp;
+			productName = DJGigsApp;
+			productReference = 3809AB952EB3608A005E541F /* DJGigsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3809ABA92EB36092005E541F /* DJGigsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3809ABC12EB36092005E541F /* Build configuration list for PBXNativeTarget "DJGigsAppTests" */;
+			buildPhases = (
+				3809ABA62EB36092005E541F /* Sources */,
+				3809ABA72EB36092005E541F /* Frameworks */,
+				3809ABA82EB36092005E541F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3809ABAC2EB36092005E541F /* PBXTargetDependency */,
+			);
+			name = DJGigsAppTests;
+			productName = DJGigsAppTests;
+			productReference = 3809ABAA2EB36092005E541F /* DJGigsAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3809ABB32EB36092005E541F /* DJGigsAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3809ABC42EB36092005E541F /* Build configuration list for PBXNativeTarget "DJGigsAppUITests" */;
+			buildPhases = (
+				3809ABB02EB36092005E541F /* Sources */,
+				3809ABB12EB36092005E541F /* Frameworks */,
+				3809ABB22EB36092005E541F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3809ABB62EB36092005E541F /* PBXTargetDependency */,
+			);
+			name = DJGigsAppUITests;
+			productName = DJGigsAppUITests;
+			productReference = 3809ABB42EB36092005E541F /* DJGigsAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3809AB8D2EB3608A005E541F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					3809AB942EB3608A005E541F = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					3809ABA92EB36092005E541F = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 3809AB942EB3608A005E541F;
+					};
+					3809ABB32EB36092005E541F = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 3809AB942EB3608A005E541F;
+					};
+				};
+			};
+			buildConfigurationList = 3809AB902EB3608A005E541F /* Build configuration list for PBXProject "DJGigsApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3809AB8C2EB3608A005E541F;
+			productRefGroup = 3809AB962EB3608A005E541F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3809AB942EB3608A005E541F /* DJGigsApp */,
+				3809ABA92EB36092005E541F /* DJGigsAppTests */,
+				3809ABB32EB36092005E541F /* DJGigsAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3809AB932EB3608A005E541F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3809ABA02EB36091005E541F /* Preview Assets.xcassets in Resources */,
+				3809AB9D2EB36091005E541F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3809ABA82EB36092005E541F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3809ABB22EB36092005E541F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3809AB912EB3608A005E541F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3809ABA22EB36091005E541F /* Persistence.swift in Sources */,
+				3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */,
+				3809AB992EB3608A005E541F /* DJGigsAppApp.swift in Sources */,
+				3809ABA52EB36091005E541F /* DJGigsApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3809ABA62EB36092005E541F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3809ABAF2EB36092005E541F /* DJGigsAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3809ABB02EB36092005E541F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3809ABBB2EB36092005E541F /* DJGigsAppUITestsLaunchTests.swift in Sources */,
+				3809ABB92EB36092005E541F /* DJGigsAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3809ABAC2EB36092005E541F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3809AB942EB3608A005E541F /* DJGigsApp */;
+			targetProxy = 3809ABAB2EB36092005E541F /* PBXContainerItemProxy */;
+		};
+		3809ABB62EB36092005E541F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3809AB942EB3608A005E541F /* DJGigsApp */;
+			targetProxy = 3809ABB52EB36092005E541F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3809ABBC2EB36092005E541F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3809ABBD2EB36092005E541F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3809ABBF2EB36092005E541F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DJGigsApp/Preview Content\"";
+				DEVELOPMENT_TEAM = ZFXNNPT2T5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TestSwiftUI.DJGigsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3809ABC02EB36092005E541F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DJGigsApp/Preview Content\"";
+				DEVELOPMENT_TEAM = ZFXNNPT2T5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TestSwiftUI.DJGigsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3809ABC22EB36092005E541F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZFXNNPT2T5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TestSwiftUI.DJGigsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DJGigsApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DJGigsApp";
+			};
+			name = Debug;
+		};
+		3809ABC32EB36092005E541F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZFXNNPT2T5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TestSwiftUI.DJGigsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DJGigsApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DJGigsApp";
+			};
+			name = Release;
+		};
+		3809ABC52EB36092005E541F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZFXNNPT2T5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TestSwiftUI.DJGigsAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DJGigsApp;
+			};
+			name = Debug;
+		};
+		3809ABC62EB36092005E541F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZFXNNPT2T5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TestSwiftUI.DJGigsAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DJGigsApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3809AB902EB3608A005E541F /* Build configuration list for PBXProject "DJGigsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3809ABBC2EB36092005E541F /* Debug */,
+				3809ABBD2EB36092005E541F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3809ABBE2EB36092005E541F /* Build configuration list for PBXNativeTarget "DJGigsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3809ABBF2EB36092005E541F /* Debug */,
+				3809ABC02EB36092005E541F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3809ABC12EB36092005E541F /* Build configuration list for PBXNativeTarget "DJGigsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3809ABC22EB36092005E541F /* Debug */,
+				3809ABC32EB36092005E541F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3809ABC42EB36092005E541F /* Build configuration list for PBXNativeTarget "DJGigsAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3809ABC52EB36092005E541F /* Debug */,
+				3809ABC62EB36092005E541F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3809ABA32EB36091005E541F /* DJGigsApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3809ABA42EB36091005E541F /* DJGigsApp.xcdatamodel */,
+			);
+			currentVersion = 3809ABA42EB36091005E541F /* DJGigsApp.xcdatamodel */;
+			path = DJGigsApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3809AB8D2EB3608A005E541F /* Project object */;
+}
