@@ -44,8 +44,8 @@ final class Track {
     var titleKey: String
     var artistKey: String
 
-    @Relationship(deleteRule: .nullify)
-      var tracks: [Track] = []
+    @Relationship(deleteRule: .nullify, inverse: \Gig.tracks)
+      var gigs: [Gig] = []
 
     init(id: UUID = UUID(), title: String, artist: String) {
         self.id = id
