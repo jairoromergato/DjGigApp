@@ -7,11 +7,12 @@ struct DjGigApp: App {
         WindowGroup {
             ZStack {
                 AppTheme.bg.ignoresSafeArea()
-                HomeView() 
+                HomeView()
                     .preferredColorScheme(.dark)
             }
             .tint(AppTheme.accent)
         }
+        // Solo el modelo de bolos
         .modelContainer(for: [Gig.self])
     }
 }

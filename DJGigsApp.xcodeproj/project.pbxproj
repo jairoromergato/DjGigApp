@@ -14,6 +14,9 @@
 		38098A522EC127EC00BE80B0 /* HomeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A512EC127EC00BE80B0 /* HomeAction.swift */; };
 		38098A542EC1280000BE80B0 /* HomeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A532EC1280000BE80B0 /* HomeActionButton.swift */; };
 		38098A562EC1280A00BE80B0 /* HomeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A552EC1280A00BE80B0 /* HomeString.swift */; };
+		38098A592EC12A5200BE80B0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A582EC12A5200BE80B0 /* CalendarView.swift */; };
+		38098A5B2EC12A8800BE80B0 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A5A2EC12A8800BE80B0 /* CalendarViewModel.swift */; };
+		38098A5D2EC12AAF00BE80B0 /* MonthGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A5C2EC12AAF00BE80B0 /* MonthGrid.swift */; };
 		3809AB992EB3608A005E541F /* DJGigsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB982EB3608A005E541F /* DJGigsApp.swift */; };
 		3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB9A2EB3608A005E541F /* ContentView.swift */; };
 		3809AB9D2EB36091005E541F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3809AB9C2EB36091005E541F /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		38098A512EC127EC00BE80B0 /* HomeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAction.swift; sourceTree = "<group>"; };
 		38098A532EC1280000BE80B0 /* HomeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActionButton.swift; sourceTree = "<group>"; };
 		38098A552EC1280A00BE80B0 /* HomeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeString.swift; sourceTree = "<group>"; };
+		38098A582EC12A5200BE80B0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		38098A5A2EC12A8800BE80B0 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		38098A5C2EC12AAF00BE80B0 /* MonthGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthGrid.swift; sourceTree = "<group>"; };
 		3809AB952EB3608A005E541F /* DJGigsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJGigsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3809AB982EB3608A005E541F /* DJGigsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsApp.swift; sourceTree = "<group>"; };
 		3809AB9A2EB3608A005E541F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,10 +118,21 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		38098A572EC12A3300BE80B0 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				38098A582EC12A5200BE80B0 /* CalendarView.swift */,
+				38098A5A2EC12A8800BE80B0 /* CalendarViewModel.swift */,
+				38098A5C2EC12AAF00BE80B0 /* MonthGrid.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		3809AB8C2EB3608A005E541F = {
 			isa = PBXGroup;
 			children = (
 				3809AB982EB3608A005E541F /* DJGigsApp.swift */,
+				38098A572EC12A3300BE80B0 /* Calendar */,
 				38098A4A2EC1277000BE80B0 /* Home */,
 				3809ABC72EB360F6005E541F /* Models */,
 				3809ABCE2EB381A5005E541F /* views */,
@@ -326,13 +343,16 @@
 				3809ABA22EB36091005E541F /* Persistence.swift in Sources */,
 				3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */,
 				38098A502EC127DC00BE80B0 /* HomeRoute.swift in Sources */,
+				38098A592EC12A5200BE80B0 /* CalendarView.swift in Sources */,
 				3809AB992EB3608A005E541F /* DJGigsApp.swift in Sources */,
 				3809ABD42EB3878F005E541F /* AppTheme.swift in Sources */,
+				38098A5B2EC12A8800BE80B0 /* CalendarViewModel.swift in Sources */,
 				3809ABA52EB36091005E541F /* DJGigsApp.xcdatamodeld in Sources */,
 				38098A4C2EC1279D00BE80B0 /* HomeView.swift in Sources */,
 				3809ABD22EB38414005E541F /* GigFormView.swift in Sources */,
 				38098A492EC125F900BE80B0 /* DurationPickerInLine.swift in Sources */,
 				3809ABD62EB387BE005E541F /* ThemedStyles.swift in Sources */,
+				38098A5D2EC12AAF00BE80B0 /* MonthGrid.swift in Sources */,
 				38098A542EC1280000BE80B0 /* HomeActionButton.swift in Sources */,
 				38098A562EC1280A00BE80B0 /* HomeString.swift in Sources */,
 				38098A522EC127EC00BE80B0 /* HomeAction.swift in Sources */,

@@ -5,9 +5,13 @@ struct HomeRouter {
     func destination(for action: HomeAction) -> some View {
         switch action {
         case .gigs:
-            GigListView()
+            GigListView()              // Sección de bolos
+        case .calendar:
+            CalendarView()             // Sección de calendario
         case .soon:
-            Text("Próximamente ✨").font(.title)
+            Text("Próximamente ✨")
+                .font(.title)
+                .foregroundStyle(.secondary)
         }
     }
 }

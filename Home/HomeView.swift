@@ -10,7 +10,6 @@ struct HomeView: View {
                 AppTheme.bg.ignoresSafeArea()
 
                 VStack(spacing: 0) {
-                    // Título alto, no pegado
                     VStack(spacing: 8) {
                         Label {
                             Text(HomeStrings.appTitle)

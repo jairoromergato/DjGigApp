@@ -1,7 +1,9 @@
-import Foundation
+import Combine
 
-@Observable
-final class HomeViewModel {
-    var actions: [HomeAction] = [.gigs, .soon]
-
+final class HomeViewModel: ObservableObject {
+    @Published var actions: [HomeAction] = [
+        .gigs,
+        .calendar,
+        .soon
+    ]
 }
