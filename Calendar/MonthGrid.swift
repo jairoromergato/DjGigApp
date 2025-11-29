@@ -5,14 +5,35 @@ struct MonthGrid: View {
     let gigsByDay: [Date: [Gig]]
     let onSelectDay: (Date) -> Void
 
-    private let cal = Calendar.current
+    private var cal: Calendar {
+        var c = Calendar.autoupdatingCurrent
+        return c
+    }
+
+    private var weekdaySymbols: [String] {
+        let formatter = DateFormatter()
+        formatter.locale = .autoupdatingCurrent
+        formatter.calendar = cal
+
+        let raw = formatter.shortStandaloneWeekdaySymbols
+            ?? formatter.shortWeekdaySymbols
+            ?? ["L", "M", "X", "J", "V", "S", "D"]
+
+        var symbols = raw
+
+        let first = cal.firstWeekday - 1
+        let reordered = Array(symbols[first...] + symbols[..<first])
+
+        return reordered
+    }
+
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 6), count: 7)
 
     var body: some View {
         VStack(spacing: 8) {
-            // Nombres de los días
+
             HStack {
-                ForEach(cal.shortWeekdaySymbols, id: \.self) { s in
+                ForEach(weekdaySymbols, id: \.self) { s in
                     Text(s.uppercased())
                         .font(.caption2.weight(.bold))
                         .foregroundStyle(.secondary)
@@ -38,24 +59,30 @@ struct MonthGrid: View {
 
     private func daysInMonth() -> [Date] {
         let start = cal.date(from: cal.dateComponents([.year, .month], from: month))!
+
         let range = cal.range(of: .day, in: .month, for: start)!
-        let firstWeekday = cal.component(.weekday, from: start) // 1..7
+
+        let weekday = cal.component(.weekday, from: start)
+        let offset = (weekday - cal.firstWeekday + 7) % 7
+
         var days: [Date] = []
 
-        // Relleno anterior
-        if let prev = cal.date(byAdding: .day, value: -(firstWeekday - 1), to: start) {
-            for i in 0..<(firstWeekday - 1) {
-                days.append(cal.date(byAdding: .day, value: i, to: prev)!)
+        if offset > 0 {
+            for i in 0..<offset {
+                let d = cal.date(byAdding: .day, value: -(offset - i), to: start)!
+                days.append(d)
             }
         }
 
-        // Días del mes
         for d in range {
-            days.append(cal.date(byAdding: .day, value: d - 1, to: start)!)
+            let day = cal.date(byAdding: .day, value: d - 1, to: start)!
+            days.append(day)
         }
 
-        // Relleno posterior hasta completar 6 filas * 7 cols si quieres (opcional)
-        while days.count % 7 != 0 { days.append(cal.date(byAdding: .day, value: 1, to: days.last!)!) }
+        while days.count % 7 != 0 {
+            let next = cal.date(byAdding: .day, value: 1, to: days.last!)!
+            days.append(next)
+        }
 
         return days
     }
@@ -68,11 +95,10 @@ private struct DayCell: View {
 
     var body: some View {
         VStack(spacing: 6) {
-            Text("\(Calendar.current.component(.day, from: date))")
+            Text("\(Calendar.autoupdatingCurrent.component(.day, from: date))")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(isInMonth ? .primary : .secondary)
 
-            // puntos de eventos
             HStack(spacing: 3) {
                 ForEach(0..<min(gigsCount, 3), id: \.self) { _ in
                     Circle()

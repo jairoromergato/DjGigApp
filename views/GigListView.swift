@@ -17,9 +17,10 @@ struct GigListView: View {
                 } else {
                     List {
                         ForEach(gigs) { gig in
-                            Button {
-                                editingGig = gig
+                            NavigationLink {
+                                GigDetailView(gig: gig)
                             } label: {
+
                                 HStack {
                                     VStack(alignment: .leading, spacing: 4) {
                                         Text(gig.eventName.isEmpty ? "Sin título" : gig.eventName)
@@ -57,13 +58,6 @@ struct GigListView: View {
                 NavigationStack {
                     GigFormView { newGig in
                         context.insert(newGig)
-                        try? context.save()
-                    }
-                }
-            }
-            .sheet(item: $editingGig) { gig in
-                NavigationStack {
-                    GigFormView(gig: gig) { _ in
                         try? context.save()
                     }
                 }

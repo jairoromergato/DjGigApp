@@ -1,6 +1,8 @@
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
+    @Query (sort: \Gig.date) private var gigs: [Gig]
     @State private var vm = HomeViewModel()
     private let router = HomeRouter()
 
@@ -23,11 +25,10 @@ struct HomeView: View {
                     .padding(.top, 48)
                     .padding(.bottom, 16)
 
-                    // Bloque centrado vertical
                     VStack(spacing: 16) {
                         ForEach(vm.actions) { action in
                             NavigationLink {
-                                router.destination(for: action)
+                                router.destination(for: action, gigs: gigs)
                             } label: {
                                 HomeActionButton(
                                     title: action.title,
@@ -49,4 +50,3 @@ struct HomeView: View {
     }
 }
 
-#Preview { HomeView()}

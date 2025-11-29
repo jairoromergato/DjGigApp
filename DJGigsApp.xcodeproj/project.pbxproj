@@ -11,12 +11,14 @@
 		38098A4C2EC1279D00BE80B0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A4B2EC1279C00BE80B0 /* HomeView.swift */; };
 		38098A4E2EC127CA00BE80B0 /* homeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A4D2EC127CA00BE80B0 /* homeViewModel.swift */; };
 		38098A502EC127DC00BE80B0 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A4F2EC127DC00BE80B0 /* HomeRoute.swift */; };
-		38098A522EC127EC00BE80B0 /* HomeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A512EC127EC00BE80B0 /* HomeAction.swift */; };
+		38098A522EC127EC00BE80B0 /* HomeDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A512EC127EC00BE80B0 /* HomeDestination.swift */; };
 		38098A542EC1280000BE80B0 /* HomeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A532EC1280000BE80B0 /* HomeActionButton.swift */; };
 		38098A562EC1280A00BE80B0 /* HomeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A552EC1280A00BE80B0 /* HomeString.swift */; };
 		38098A592EC12A5200BE80B0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A582EC12A5200BE80B0 /* CalendarView.swift */; };
 		38098A5B2EC12A8800BE80B0 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A5A2EC12A8800BE80B0 /* CalendarViewModel.swift */; };
 		38098A5D2EC12AAF00BE80B0 /* MonthGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A5C2EC12AAF00BE80B0 /* MonthGrid.swift */; };
+		38098A5F2EC2189200BE80B0 /* SplashContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A5E2EC2189200BE80B0 /* SplashContainerView.swift */; };
+		38098A612EC218B900BE80B0 /* AnimatedSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A602EC218B900BE80B0 /* AnimatedSplashView.swift */; };
 		3809AB992EB3608A005E541F /* DJGigsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB982EB3608A005E541F /* DJGigsApp.swift */; };
 		3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AB9A2EB3608A005E541F /* ContentView.swift */; };
 		3809AB9D2EB36091005E541F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3809AB9C2EB36091005E541F /* Assets.xcassets */; };
@@ -31,6 +33,10 @@
 		3809ABD22EB38414005E541F /* GigFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD12EB38414005E541F /* GigFormView.swift */; };
 		3809ABD42EB3878F005E541F /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD32EB3878F005E541F /* AppTheme.swift */; };
 		3809ABD62EB387BE005E541F /* ThemedStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD52EB387BE005E541F /* ThemedStyles.swift */; };
+		388F91792ED5BF2A003D162D /* ImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388F91782ED5BF2A003D162D /* ImagesView.swift */; };
+		388F917B2ED5EF9A003D162D /* AllImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388F917A2ED5EF9A003D162D /* AllImagesView.swift */; };
+		38B9902B2ED9AAD7003B758B /* GigDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9902A2ED9AAD7003B758B /* GigDetailView.swift */; };
+		38B9902D2ED9ADC1003B758B /* GigImagesGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9902C2ED9ADC1003B758B /* GigImagesGalleryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +61,14 @@
 		38098A4B2EC1279C00BE80B0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38098A4D2EC127CA00BE80B0 /* homeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewModel.swift; sourceTree = "<group>"; };
 		38098A4F2EC127DC00BE80B0 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
-		38098A512EC127EC00BE80B0 /* HomeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAction.swift; sourceTree = "<group>"; };
+		38098A512EC127EC00BE80B0 /* HomeDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDestination.swift; sourceTree = "<group>"; };
 		38098A532EC1280000BE80B0 /* HomeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActionButton.swift; sourceTree = "<group>"; };
 		38098A552EC1280A00BE80B0 /* HomeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeString.swift; sourceTree = "<group>"; };
 		38098A582EC12A5200BE80B0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		38098A5A2EC12A8800BE80B0 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		38098A5C2EC12AAF00BE80B0 /* MonthGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthGrid.swift; sourceTree = "<group>"; };
+		38098A5E2EC2189200BE80B0 /* SplashContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashContainerView.swift; sourceTree = "<group>"; };
+		38098A602EC218B900BE80B0 /* AnimatedSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSplashView.swift; sourceTree = "<group>"; };
 		3809AB952EB3608A005E541F /* DJGigsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJGigsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3809AB982EB3608A005E541F /* DJGigsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJGigsApp.swift; sourceTree = "<group>"; };
 		3809AB9A2EB3608A005E541F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +86,10 @@
 		3809ABD12EB38414005E541F /* GigFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigFormView.swift; sourceTree = "<group>"; };
 		3809ABD32EB3878F005E541F /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		3809ABD52EB387BE005E541F /* ThemedStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedStyles.swift; sourceTree = "<group>"; };
+		388F91782ED5BF2A003D162D /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
+		388F917A2ED5EF9A003D162D /* AllImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllImagesView.swift; sourceTree = "<group>"; };
+		38B9902A2ED9AAD7003B758B /* GigDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigDetailView.swift; sourceTree = "<group>"; };
+		38B9902C2ED9ADC1003B758B /* GigImagesGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigImagesGalleryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				38098A4B2EC1279C00BE80B0 /* HomeView.swift */,
-				38098A512EC127EC00BE80B0 /* HomeAction.swift */,
+				38098A512EC127EC00BE80B0 /* HomeDestination.swift */,
 				38098A4D2EC127CA00BE80B0 /* homeViewModel.swift */,
 				38098A4F2EC127DC00BE80B0 /* HomeRoute.swift */,
 				38098A532EC1280000BE80B0 /* HomeActionButton.swift */,
@@ -132,9 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				3809AB982EB3608A005E541F /* DJGigsApp.swift */,
+				388F91772ED5BF0F003D162D /* Image */,
 				38098A572EC12A3300BE80B0 /* Calendar */,
 				38098A4A2EC1277000BE80B0 /* Home */,
-				3809ABC72EB360F6005E541F /* Models */,
+				3809ABC72EB360F6005E541F /* Gigs */,
 				3809ABCE2EB381A5005E541F /* views */,
 				3809AB972EB3608A005E541F /* DJGigsApp */,
 				3809ABAD2EB36092005E541F /* DJGigsAppTests */,
@@ -190,12 +203,12 @@
 			path = DJGigsAppUITests;
 			sourceTree = "<group>";
 		};
-		3809ABC72EB360F6005E541F /* Models */ = {
+		3809ABC72EB360F6005E541F /* Gigs */ = {
 			isa = PBXGroup;
 			children = (
 				3809ABC82EB36127005E541F /* gig.swift */,
 			);
-			path = Models;
+			path = Gigs;
 			sourceTree = "<group>";
 		};
 		3809ABCE2EB381A5005E541F /* views */ = {
@@ -203,11 +216,24 @@
 			children = (
 				3809ABCF2EB381CA005E541F /* GigListView.swift */,
 				3809ABD12EB38414005E541F /* GigFormView.swift */,
+				38B9902A2ED9AAD7003B758B /* GigDetailView.swift */,
 				3809ABD32EB3878F005E541F /* AppTheme.swift */,
 				3809ABD52EB387BE005E541F /* ThemedStyles.swift */,
 				38098A482EC125F900BE80B0 /* DurationPickerInLine.swift */,
+				38098A5E2EC2189200BE80B0 /* SplashContainerView.swift */,
+				38098A602EC218B900BE80B0 /* AnimatedSplashView.swift */,
+				38B9902C2ED9ADC1003B758B /* GigImagesGalleryView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		388F91772ED5BF0F003D162D /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				388F91782ED5BF2A003D162D /* ImagesView.swift */,
+				388F917A2ED5EF9A003D162D /* AllImagesView.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,16 +372,22 @@
 				38098A592EC12A5200BE80B0 /* CalendarView.swift in Sources */,
 				3809AB992EB3608A005E541F /* DJGigsApp.swift in Sources */,
 				3809ABD42EB3878F005E541F /* AppTheme.swift in Sources */,
+				38B9902D2ED9ADC1003B758B /* GigImagesGalleryView.swift in Sources */,
 				38098A5B2EC12A8800BE80B0 /* CalendarViewModel.swift in Sources */,
 				3809ABA52EB36091005E541F /* DJGigsApp.xcdatamodeld in Sources */,
+				388F91792ED5BF2A003D162D /* ImagesView.swift in Sources */,
 				38098A4C2EC1279D00BE80B0 /* HomeView.swift in Sources */,
+				388F917B2ED5EF9A003D162D /* AllImagesView.swift in Sources */,
+				38B9902B2ED9AAD7003B758B /* GigDetailView.swift in Sources */,
+				38098A5F2EC2189200BE80B0 /* SplashContainerView.swift in Sources */,
+				38098A612EC218B900BE80B0 /* AnimatedSplashView.swift in Sources */,
 				3809ABD22EB38414005E541F /* GigFormView.swift in Sources */,
 				38098A492EC125F900BE80B0 /* DurationPickerInLine.swift in Sources */,
 				3809ABD62EB387BE005E541F /* ThemedStyles.swift in Sources */,
 				38098A5D2EC12AAF00BE80B0 /* MonthGrid.swift in Sources */,
 				38098A542EC1280000BE80B0 /* HomeActionButton.swift in Sources */,
 				38098A562EC1280A00BE80B0 /* HomeString.swift in Sources */,
-				38098A522EC127EC00BE80B0 /* HomeAction.swift in Sources */,
+				38098A522EC127EC00BE80B0 /* HomeDestination.swift in Sources */,
 				3809ABC92EB36127005E541F /* gig.swift in Sources */,
 				3809ABD02EB381CA005E541F /* GigListView.swift in Sources */,
 				38098A4E2EC127CA00BE80B0 /* homeViewModel.swift in Sources */,

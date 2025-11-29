@@ -1,8 +1,9 @@
 import Foundation
 
-enum HomeAction: CaseIterable, Identifiable {
+enum HomeDestination: Identifiable {
     case gigs
     case calendar
+    case images(id: String?)
     case soon
 
     var id: String { rawValue }
@@ -11,6 +12,7 @@ enum HomeAction: CaseIterable, Identifiable {
         switch self {
         case .gigs: return "gigs"
         case .calendar: return "calendar"
+        case .images: return "image"
         case .soon: return "soon"
         }
     }
@@ -21,6 +23,8 @@ enum HomeAction: CaseIterable, Identifiable {
             return HomeStrings.gigsTitle
         case .calendar:
             return HomeStrings.calendarTitle
+        case .images:
+            return HomeStrings.imagesTitle
         case .soon:
             return HomeStrings.soonTitle
         }
@@ -32,8 +36,10 @@ enum HomeAction: CaseIterable, Identifiable {
             return "music.mic"
         case .calendar:
             return "calendar"
+        case .images:
+            return "photo.on.rectangle.angled"
         case .soon:
-            return "sparkles"
+            return "ellipsis.circle"
         }
     }
 }

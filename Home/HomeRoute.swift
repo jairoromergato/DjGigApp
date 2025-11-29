@@ -1,13 +1,16 @@
 import SwiftUI
+import SwiftData
 
 struct HomeRouter {
     @ViewBuilder
-    func destination(for action: HomeAction) -> some View {
+    func destination(for action: HomeDestination, gigs: [Gig]) -> some View {
         switch action {
         case .gigs:
-            GigListView()              // Sección de bolos
+            GigListView()
         case .calendar:
-            CalendarView()             // Sección de calendario
+            CalendarView()
+        case .images:
+            AllGigImagesView(gigs: gigs)
         case .soon:
             Text("Próximamente ✨")
                 .font(.title)

@@ -3,7 +3,7 @@ import SwiftData
 
 @Model
 final class Gig {
-    @Attribute(.unique) var id: UUID
+    var id: UUID
     var date: Date
     var eventName: String
     var venue: String
@@ -11,7 +11,8 @@ final class Gig {
     var durationMinutes: Int
     var style: String
     var notes: String
-
+    var images: [Data] = []
+    
     init(
         id: UUID = UUID(),
         date: Date = .init(),
@@ -20,7 +21,9 @@ final class Gig {
         fee: Double = 0,
         durationMinutes: Int = 0,
         style: String = "",
-        notes: String = ""
+        notes: String = "",
+       images: [Data] = []
+
     ) {
         self.id = id
         self.date = date
@@ -30,5 +33,7 @@ final class Gig {
         self.durationMinutes = durationMinutes
         self.style = style
         self.notes = notes
+        self.images = images
+
     }
 }

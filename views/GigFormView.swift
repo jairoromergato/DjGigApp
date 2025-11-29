@@ -50,7 +50,15 @@ struct GigFormView: View {
                             .foregroundStyle(.secondary)
                     }
                 }
-
+            }
+            
+            Section("Imágenes") {
+                if let gig {
+                    ImagesView(gig: gig, id: gig.id.uuidString)
+                } else {
+                    Text("Guarda el bolo primero para añadir imágenes.")
+                        .foregroundStyle(.secondary)
+                }
             }
 
             Section("Notas") {
@@ -69,7 +77,7 @@ struct GigFormView: View {
             }
         }
     }
-
+    
     private var isValid: Bool {
         !eventName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         && !venue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty

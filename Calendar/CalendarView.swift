@@ -8,7 +8,6 @@ struct CalendarView: View {
     @State private var showingNew = false
     @State private var editingGig: Gig?
 
-    // Fuente única de verdad: todos los gigs ordenados por fecha
     @Query(sort: \Gig.date) private var gigs: [Gig]
 
     var body: some View {
@@ -31,15 +30,6 @@ struct CalendarView: View {
                 .padding(.bottom, 12)
             }
             .navigationTitle("Calendario")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        showingNew = true
-                    } label: {
-                        Label("Nuevo", systemImage: "plus")
-                    }
-                }
-            }
             .sheet(isPresented: $showingNew) {
                 NavigationStack {
                     GigFormView { newGig in
