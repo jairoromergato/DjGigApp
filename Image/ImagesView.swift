@@ -26,7 +26,7 @@ struct ImagesView: View {
                         if let data = try? await item.loadTransferable(type: Data.self),
                            let uiImg = UIImage(data: data) {
 
-                            saveImageToDisk(image: uiImg)
+                            saveImage(image: uiImg)
                             loadImages()
                         }
                     }
@@ -51,39 +51,18 @@ struct ImagesView: View {
         }
     }
 
-    private func saveImageToDisk(image: UIImage) {
-        let manager = FileManager.default
-
-        guard let folder = getFolder() else { return }
-
-        if !manager.fileExists(atPath: folder.path) {
-            try? manager.createDirectory(at: folder, withIntermediateDirectories: true)
-        }
-
-        let filename = folder.appendingPathComponent("\(UUID().uuidString).jpg")
-
-        if let data = image.jpegData(compressionQuality: 0.85) {
-            try? data.write(to: filename)
-        }
-    }
-
-    private func loadImages() {
-        images.removeAll()
-
-        guard let folder = getFolder() else { return }
-
-        if let files = try? FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil) {
-            for file in files where file.pathExtension == "jpg" {
-                if let uiImg = UIImage(contentsOfFile: file.path) {
-                    images.append(uiImg)
+    private func saveImage(image: UIImage) {
+        Task.detached(priority: .userInitiated) {
+            if let data = image.jpegData(compressionQuality: 0.85) {
+                await MainActor.run {
+                    gig.images.append(data)
                 }
             }
         }
     }
 
-    private func getFolder() -> URL? {
-        let manager = FileManager.default
-        return manager.urls(for: .documentDirectory, in: .userDomainMask).first?
-            .appendingPathComponent(id)
+    private func loadImages() {
+        images.removeAll()
+        images = gig.images.compactMap { UIImage(data: $0) }
     }
 }

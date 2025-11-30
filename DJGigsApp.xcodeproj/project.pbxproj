@@ -207,6 +207,10 @@
 			isa = PBXGroup;
 			children = (
 				3809ABC82EB36127005E541F /* gig.swift */,
+				3809ABCF2EB381CA005E541F /* GigListView.swift */,
+				3809ABD12EB38414005E541F /* GigFormView.swift */,
+				38B9902A2ED9AAD7003B758B /* GigDetailView.swift */,
+				38B9902C2ED9ADC1003B758B /* GigImagesGalleryView.swift */,
 			);
 			path = Gigs;
 			sourceTree = "<group>";
@@ -214,15 +218,11 @@
 		3809ABCE2EB381A5005E541F /* views */ = {
 			isa = PBXGroup;
 			children = (
-				3809ABCF2EB381CA005E541F /* GigListView.swift */,
-				3809ABD12EB38414005E541F /* GigFormView.swift */,
-				38B9902A2ED9AAD7003B758B /* GigDetailView.swift */,
 				3809ABD32EB3878F005E541F /* AppTheme.swift */,
 				3809ABD52EB387BE005E541F /* ThemedStyles.swift */,
 				38098A482EC125F900BE80B0 /* DurationPickerInLine.swift */,
 				38098A5E2EC2189200BE80B0 /* SplashContainerView.swift */,
 				38098A602EC218B900BE80B0 /* AnimatedSplashView.swift */,
-				38B9902C2ED9ADC1003B758B /* GigImagesGalleryView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";

@@ -6,7 +6,7 @@ struct MonthGrid: View {
     let onSelectDay: (Date) -> Void
 
     private var cal: Calendar {
-        var c = Calendar.autoupdatingCurrent
+        let c = Calendar.autoupdatingCurrent
         return c
     }
 
@@ -19,7 +19,7 @@ struct MonthGrid: View {
             ?? formatter.shortWeekdaySymbols
             ?? ["L", "M", "X", "J", "V", "S", "D"]
 
-        var symbols = raw
+        let symbols = raw
 
         let first = cal.firstWeekday - 1
         let reordered = Array(symbols[first...] + symbols[..<first])

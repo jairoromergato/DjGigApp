@@ -44,7 +44,7 @@ struct GigDetailView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Imágenes")
                         .font(.title3.bold())
-                    GigImagesGalleryView(gigID: gig.id.uuidString)
+                    GigImagesGalleryView(gig: gig)
                 }
 
             }
