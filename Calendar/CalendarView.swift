@@ -21,7 +21,9 @@ struct CalendarView: View {
                     MonthGrid(
                         month: vm.currentMonth,
                         gigsByDay: groupGigsByDay(gigs),
-                        onSelectDay: { date in vm.selectedDate = date }
+                        onSelectDay: { date in
+                            vm.selectedDate = date
+                        }
                     )
 
                     daySummary
@@ -49,25 +51,34 @@ struct CalendarView: View {
     }
 
 
-
     private var header: some View {
         HStack {
-            Button { vm.prevMonth() } label: { Image(systemName: "chevron.left") }
+            Button { vm.prevMonth() } label: {
+                Image(systemName: "chevron.left")
+            }
+
             Spacer()
+
             Text(vm.currentMonth, format: .dateTime.month(.wide).year())
                 .font(.title2.weight(.semibold))
                 .foregroundStyle(AppTheme.accent)
+
             Spacer()
-            Button { vm.nextMonth() } label: { Image(systemName: "chevron.right") }
+
+            Button { vm.nextMonth() } label: {
+                Image(systemName: "chevron.right")
+            }
         }
         .tint(AppTheme.accent)
         .padding(.top, 8)
     }
 
+
     private var daySummary: some View {
         VStack(alignment: .leading, spacing: 8) {
+
             HStack {
-                Text(vm.selectedDate, format: .dateTime.day().month().year())
+                Text(vm.selectedDate, format: .dateTime.month().year())
                     .font(.headline)
                 Spacer()
                 Button {
@@ -78,38 +89,42 @@ struct CalendarView: View {
                 .tint(AppTheme.accent)
             }
 
-            let gigsToday = gigsForDay(vm.selectedDate, gigs: gigs)
+            let gigsThisMonth = gigsForMonth(vm.selectedDate, gigs: gigs)
 
-            if gigsToday.isEmpty {
+            if gigsThisMonth.isEmpty {
                 ContentUnavailableView(
-                    "Sin bolos en este día",
+                    "Sin bolos este mes",
                     systemImage: "calendar.badge.exclamationmark",
                     description: Text("Toca “Añadir bolo” para crear uno.")
                 )
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
+
             } else {
+
                 List {
-                    ForEach(gigsToday, id: \.id) { gig in
+                    ForEach(gigsThisMonth, id: \.id) { gig in
                         Button { editingGig = gig } label: {
                             HStack {
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(gig.eventName.isEmpty ? "Sin título" : gig.eventName)
                                         .font(.headline)
-                                    Text("\(gig.venue) · \(gig.date.formatted(date: .omitted, time: .shortened))")
+
+                                    Text("\(gig.venue) · \(gig.date.formatted(date: .abbreviated, time: .shortened))")
                                         .font(.subheadline)
                                         .foregroundStyle(.secondary)
                                 }
+
                                 Spacer()
+
                                 Text(gig.fee, format: .currency(code: "EUR"))
                                     .font(.subheadline)
                             }
                         }
                     }
-
                     .onDelete { idx in
                         for i in idx {
-                            let toDelete = gigsToday[i]
+                            let toDelete = gigsThisMonth[i]
                             context.delete(toDelete)
                         }
                         try? context.save()
@@ -123,22 +138,29 @@ struct CalendarView: View {
     }
 
 
+
     private func groupGigsByDay(_ gigs: [Gig]) -> [Date: [Gig]] {
         var dict: [Date: [Gig]] = [:]
         let cal = Calendar.current
+
         for g in gigs {
-            let k = cal.startOfDay(for: g.date)
-            dict[k, default: []].append(g)
+            let dayKey = cal.startOfDay(for: g.date)
+            dict[dayKey, default: []].append(g)
         }
         return dict
     }
 
-    private func gigsForDay(_ day: Date, gigs: [Gig]) -> [Gig] {
+    private func gigsForMonth(_ date: Date, gigs: [Gig]) -> [Gig] {
         let cal = Calendar.current
-        let start = cal.startOfDay(for: day)
-        guard let end = cal.date(byAdding: .day, value: 1, to: start) else { return [] }
-        return gigs.filter { $0.date >= start && $0.date < end }
+
+        let startOfMonth = cal.date(from: cal.dateComponents([.year, .month], from: date))!
+        let range = cal.range(of: .day, in: .month, for: date)!
+        let endOfMonth = cal.date(byAdding: .day, value: range.count, to: startOfMonth)!
+
+        return gigs.filter { $0.date >= startOfMonth && $0.date < endOfMonth }
     }
 }
 
-#Preview { CalendarView().preferredColorScheme(.dark) }
+#Preview {
+    CalendarView().preferredColorScheme(.dark)
+}
