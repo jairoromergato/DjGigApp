@@ -41,10 +41,9 @@ struct GigDetailView: View {
                 
                 VStack(alignment: .leading, spacing:12) {
                     Text("Ubicacion")
-                        .font(.title3)
+                        .font(.title3.bold())
                     if let lat = gig.latitude, let lon = gig.longitude {
                         VStack(alignment: .leading, spacing: 12) {
-                            Text("Ubicación").font(.title3.bold())
                             GigMapView(latitude: lat, longitude: lon)
                         }
                     } else {
