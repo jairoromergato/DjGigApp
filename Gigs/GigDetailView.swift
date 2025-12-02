@@ -7,6 +7,10 @@ struct GigDetailView: View {
     
     @Bindable var gig: Gig
     @State private var showingEdit = false
+    @State private var imageToDeleteIndex: Int? = nil
+    @State private var showDeleteDialog = false
+    @State private var showingAllImages = false
+
     
     var body: some View {
         ScrollView {
@@ -32,11 +36,57 @@ struct GigDetailView: View {
                     detailRow(title: "Pago",
                               value: gig.fee.formatted(.currency(code: "EUR")))
                 }
-                
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Imágenes")
                         .font(.title3.bold())
-                    GigImagesGalleryView(gig: gig)
+                    
+                    let images = gig.images
+                    
+                    if images.isEmpty {
+                        Text("Sin imágenes")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                
+                                ForEach(Array(images.prefix(5).enumerated()), id: \.offset) { index, data in
+                                    if let uiImage = UIImage(data: data) {
+                                        Image(uiImage: uiImage)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 120, height: 120)
+                                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                                        
+                                            .onLongPressGesture {
+                                                imageToDeleteIndex = index
+                                                showDeleteDialog = true
+                                            }
+                                    }
+                                }
+                                
+                                if images.count > 5 {
+                                    Button {
+                                        showingAllImages = true
+                                    } label: {
+                                        VStack {
+                                            Image(systemName: "ellipsis.circle")
+                                                .font(.largeTitle)
+                                                .foregroundColor(.purple)
+                                            Text("Ver más")
+                                                .font(.caption)
+                                                .foregroundColor(.purple)
+                                        }
+                                        .frame(width: 120, height: 120)
+                                        .background(Color(.systemGray6))
+                                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                                    }
+                                }
+                                
+                            }
+                            .padding(.vertical, 6)
+                        }
+                    }
                 }
                 
                 VStack(alignment: .leading, spacing:12) {
@@ -75,6 +125,10 @@ struct GigDetailView: View {
                 }
             }
         }
+        .sheet(isPresented: $showingAllImages) {
+            AllGigImagesView(images: gig.images)
+        }
+        
         .fullScreenCover(isPresented: $showingEdit) {
             NavigationStack {
                 GigFormView(gig: gig) { _ in

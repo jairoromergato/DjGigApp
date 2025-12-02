@@ -9,30 +9,9 @@ struct ImagesView: View {
     
     @State private var images: [UIImage] = []
     @State private var selectedItems: [PhotosPickerItem] = []
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-
-            PhotosPicker(
-                selection: $selectedItems,
-                maxSelectionCount: 10,
-                matching: .images
-            ) {
-                Label("Añadir imágenes", systemImage: "photo.on.rectangle")
-            }
-            .onChange(of: selectedItems) { _, items in
-                for item in items {
-                    Task {
-                        if let data = try? await item.loadTransferable(type: Data.self),
-                           let uiImg = UIImage(data: data) {
-
-                            saveImage(image: uiImg)
-                            loadImages()
-                        }
-                    }
-                }
-            }
-
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(images.indices, id: \.self) { index in
@@ -45,12 +24,34 @@ struct ImagesView: View {
                     }
                 }
             }
+            PhotosPicker(
+                selection: $selectedItems,
+                maxSelectionCount: 10,
+                matching: .images
+            ) {
+                Label("Añadir imágenes", systemImage: "plus.circle")
+                    .buttonStyle(.borderedProminent)
+                    .tint(.purple)
+            }
+            .onChange(of: selectedItems) { _, items in
+                for item in items {
+                    Task {
+                        if let data = try? await item.loadTransferable(type: Data.self),
+                           let uiImg = UIImage(data: data) {
+                            
+                            saveImage(image: uiImg)
+                            loadImages()
+                        }
+                    }
+                }
+            }
+            
         }
         .onAppear {
             loadImages()
         }
     }
-
+    
     private func saveImage(image: UIImage) {
         Task.detached(priority: .userInitiated) {
             if let data = image.jpegData(compressionQuality: 0.85) {
@@ -60,7 +61,7 @@ struct ImagesView: View {
             }
         }
     }
-
+    
     private func loadImages() {
         images.removeAll()
         images = gig.images.compactMap { UIImage(data: $0) }
