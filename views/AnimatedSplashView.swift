@@ -15,12 +15,11 @@ struct NeonFrame<Content: View>: View {
     var body: some View {
         ZStack {
             
-            // ───── Marco super ajustado ─────
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color.green.opacity(glow ? 1 : 0.4),
                         lineWidth: spark ? 4 : 2)
-                .frame(width: size.width + 20,   // ← el marco se ajusta al texto
-                       height: size.height + 15) // ← casi rozando las letras
+                .frame(width: size.width + 20,
+                       height: size.height + 15)
                 .shadow(color: .green.opacity(glow ? 1 : 0.45),
                         radius: glow ? 25 : 8)
                 .shadow(color: .green.opacity(glow ? 0.7 : 0.2),
@@ -30,13 +29,12 @@ struct NeonFrame<Content: View>: View {
                 .animation(.easeInOut(duration: 0.15), value: spark)
                 .animation(.easeInOut(duration: 0.25), value: flicker)
                 .animation(.easeInOut(duration: 1.2).repeatForever(), value: glow)
-            
-            // ───── Contenido (letras neon) ─────
+        
             content
                 .background(
                     GeometryReader { geo -> Color in
                         DispatchQueue.main.async {
-                            self.size = geo.size   // ← medir el tamaño real del texto
+                            self.size = geo.size   
                         }
                         return .clear
                     }

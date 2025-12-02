@@ -11,6 +11,8 @@ struct DjGigApp: App {
                     .preferredColorScheme(.dark)
             }
             .tint(AppTheme.accent)
+            .background(AppTheme.bg)
+            .listRowBackground(AppTheme.bg)
         }
         .modelContainer(for: [Gig.self])
     }
