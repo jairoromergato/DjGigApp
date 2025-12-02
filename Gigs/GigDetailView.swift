@@ -125,7 +125,9 @@ struct GigDetailView: View {
                 }
             }
         }
-        
+        .sheet(isPresented: $showingAllImages) {
+                GigAllImagesView(gig: gig)
+            }
         .fullScreenCover(isPresented: $showingEdit) {
             NavigationStack {
                 GigFormView(gig: gig) { _ in
