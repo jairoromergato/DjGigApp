@@ -7,7 +7,7 @@ struct GigDetailView: View {
     
     @Bindable var gig: Gig
     @State private var showingEdit = false
-
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -33,20 +33,37 @@ struct GigDetailView: View {
                               value: gig.fee.formatted(.currency(code: "EUR")))
                 }
                 
-                if !gig.notes.isEmpty {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Notas")
-                            .font(.title3.bold())
-                        Text(gig.notes)
-                    }
-                }
-                
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Imágenes")
                         .font(.title3.bold())
                     GigImagesGalleryView(gig: gig)
                 }
-
+                
+                VStack(alignment: .leading, spacing:12) {
+                    Text("Ubicacion")
+                        .font(.title3)
+                    if let lat = gig.latitude, let lon = gig.longitude {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Ubicación").font(.title3.bold())
+                            GigMapView(latitude: lat, longitude: lon)
+                        }
+                    } else {
+                        Text("Sin ubicación definida")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Notas")
+                        .font(.title3.bold())
+                    
+                    if gig.notes.isEmpty {
+                        Text("Sin notas")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Text(gig.notes)
+                    }
+                }
             }
             .padding()
         }
@@ -59,7 +76,7 @@ struct GigDetailView: View {
                 }
             }
         }
-        .sheet(isPresented: $showingEdit) {
+        .fullScreenCover(isPresented: $showingEdit) {
             NavigationStack {
                 GigFormView(gig: gig) { _ in
                     try? context.save()
@@ -68,7 +85,6 @@ struct GigDetailView: View {
         }
     }
     
-    // MARK: - Helper view
     private func detailRow(title: String, value: String) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)

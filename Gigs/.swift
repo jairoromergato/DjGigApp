@@ -1,3 +1,6 @@
+//import Foundation
+
+
 import SwiftUI
 import SwiftData
 
@@ -14,9 +17,9 @@ struct GigFormView: View {
     @State private var durationMinutes: Int
     @State private var style: String
     @State private var notes: String
+    @State private var showingLocationPicker = false
     @State private var latitude: Double?
     @State private var longitude: Double?
-    @State private var showingLocationPicker = false
     
     init(gig: Gig? = nil, onSave: @escaping (Gig) -> Void) {
         self.gig = gig
@@ -66,6 +69,11 @@ struct GigFormView: View {
                 }
             }
             
+            Section("Notas") {
+                TextEditor(text: $notes)
+                    .frame(minHeight: 120)
+            }
+            
             Section("Ubicación") {
                 if let lat = latitude, let lon = longitude {
                     GigMapView(latitude: lat, longitude: lon)
@@ -75,15 +83,10 @@ struct GigFormView: View {
                     Text("Sin ubicación seleccionada")
                         .foregroundStyle(.secondary)
                 }
-                
+
                 Button("Elegir ubicación") {
                     showingLocationPicker = true
                 }
-            }
-            
-            Section("Notas") {
-                TextEditor(text: $notes)
-                    .frame(minHeight: 120)
             }
         }
         .navigationTitle(gig == nil ? "Nuevo bolo" : "Editar bolo")
@@ -96,6 +99,7 @@ struct GigFormView: View {
                     .disabled(!isValid)
             }
         }
+        // ⬇️ LA SHEET ESTÁ AQUÍ ABAJO → FUERA DEL FORM
         .sheet(isPresented: $showingLocationPicker) {
             NavigationStack {
                 LocationPickerView(
@@ -127,7 +131,7 @@ struct GigFormView: View {
             gig.notes = notes
             gig.latitude = latitude
             gig.longitude = longitude
-            
+
             onSave(gig)
         } else {
             let newGig = Gig(
