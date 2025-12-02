@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32F1F6B52EDED1E1003A3CBD /* MapsPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F6B42EDED1E1003A3CBD /* MapsPoint.swift */; };
+		32F1F6B72EDED372003A3CBD /* NavigationOptionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F6B62EDED372003A3CBD /* NavigationOptionSheet.swift */; };
+		32F1F6B92EDED64C003A3CBD /* GigMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F6B82EDED64C003A3CBD /* GigMapsView.swift */; };
+		32F1F6BB2EDEDD5A003A3CBD /* LocationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F6BA2EDEDD5A003A3CBD /* LocationPickerView.swift */; };
+		32F1F6BF2EDEE4FF003A3CBD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F6BE2EDEE4FF003A3CBD /* LocationManager.swift */; };
 		38098A492EC125F900BE80B0 /* DurationPickerInLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A482EC125F900BE80B0 /* DurationPickerInLine.swift */; };
 		38098A4C2EC1279D00BE80B0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A4B2EC1279C00BE80B0 /* HomeView.swift */; };
 		38098A4E2EC127CA00BE80B0 /* homeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38098A4D2EC127CA00BE80B0 /* homeViewModel.swift */; };
@@ -57,6 +62,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32F1F6B42EDED1E1003A3CBD /* MapsPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsPoint.swift; sourceTree = "<group>"; };
+		32F1F6B62EDED372003A3CBD /* NavigationOptionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationOptionSheet.swift; sourceTree = "<group>"; };
+		32F1F6B82EDED64C003A3CBD /* GigMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigMapsView.swift; sourceTree = "<group>"; };
+		32F1F6BA2EDEDD5A003A3CBD /* LocationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerView.swift; sourceTree = "<group>"; };
+		32F1F6BE2EDEE4FF003A3CBD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		32F1F6C02EDEE653003A3CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		38098A482EC125F900BE80B0 /* DurationPickerInLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerInLine.swift; sourceTree = "<group>"; };
 		38098A4B2EC1279C00BE80B0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38098A4D2EC127CA00BE80B0 /* homeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewModel.swift; sourceTree = "<group>"; };
@@ -117,6 +128,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32F1F6B12EDECEBC003A3CBD /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				32F1F6B42EDED1E1003A3CBD /* MapsPoint.swift */,
+				32F1F6B62EDED372003A3CBD /* NavigationOptionSheet.swift */,
+				32F1F6B82EDED64C003A3CBD /* GigMapsView.swift */,
+				32F1F6BA2EDEDD5A003A3CBD /* LocationPickerView.swift */,
+				32F1F6BE2EDEE4FF003A3CBD /* LocationManager.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		38098A4A2EC1277000BE80B0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				3809AB982EB3608A005E541F /* DJGigsApp.swift */,
+				32F1F6B12EDECEBC003A3CBD /* Maps */,
 				388F91772ED5BF0F003D162D /* Image */,
 				38098A572EC12A3300BE80B0 /* Calendar */,
 				38098A4A2EC1277000BE80B0 /* Home */,
@@ -169,6 +193,7 @@
 		3809AB972EB3608A005E541F /* DJGigsApp */ = {
 			isa = PBXGroup;
 			children = (
+				32F1F6C02EDEE653003A3CBD /* Info.plist */,
 				3809AB9A2EB3608A005E541F /* ContentView.swift */,
 				3809ABA12EB36091005E541F /* Persistence.swift */,
 				3809AB9C2EB36091005E541F /* Assets.xcassets */,
@@ -300,7 +325,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					3809AB942EB3608A005E541F = {
 						CreatedOnToolsVersion = 15.2;
@@ -368,7 +393,9 @@
 			files = (
 				3809ABA22EB36091005E541F /* Persistence.swift in Sources */,
 				3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */,
+				32F1F6BF2EDEE4FF003A3CBD /* LocationManager.swift in Sources */,
 				38098A502EC127DC00BE80B0 /* HomeRoute.swift in Sources */,
+				32F1F6BB2EDEDD5A003A3CBD /* LocationPickerView.swift in Sources */,
 				38098A592EC12A5200BE80B0 /* CalendarView.swift in Sources */,
 				3809AB992EB3608A005E541F /* DJGigsApp.swift in Sources */,
 				3809ABD42EB3878F005E541F /* AppTheme.swift in Sources */,
@@ -376,10 +403,12 @@
 				38098A5B2EC12A8800BE80B0 /* CalendarViewModel.swift in Sources */,
 				3809ABA52EB36091005E541F /* DJGigsApp.xcdatamodeld in Sources */,
 				388F91792ED5BF2A003D162D /* ImagesView.swift in Sources */,
+				32F1F6B72EDED372003A3CBD /* NavigationOptionSheet.swift in Sources */,
 				38098A4C2EC1279D00BE80B0 /* HomeView.swift in Sources */,
 				388F917B2ED5EF9A003D162D /* AllImagesView.swift in Sources */,
 				38B9902B2ED9AAD7003B758B /* GigDetailView.swift in Sources */,
 				38098A5F2EC2189200BE80B0 /* SplashContainerView.swift in Sources */,
+				32F1F6B92EDED64C003A3CBD /* GigMapsView.swift in Sources */,
 				38098A612EC218B900BE80B0 /* AnimatedSplashView.swift in Sources */,
 				3809ABD22EB38414005E541F /* GigFormView.swift in Sources */,
 				38098A492EC125F900BE80B0 /* DurationPickerInLine.swift in Sources */,
@@ -387,6 +416,7 @@
 				38098A5D2EC12AAF00BE80B0 /* MonthGrid.swift in Sources */,
 				38098A542EC1280000BE80B0 /* HomeActionButton.swift in Sources */,
 				38098A562EC1280A00BE80B0 /* HomeString.swift in Sources */,
+				32F1F6B52EDED1E1003A3CBD /* MapsPoint.swift in Sources */,
 				38098A522EC127EC00BE80B0 /* HomeDestination.swift in Sources */,
 				3809ABC92EB36127005E541F /* gig.swift in Sources */,
 				3809ABD02EB381CA005E541F /* GigListView.swift in Sources */,
@@ -485,6 +515,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -541,6 +572,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -554,9 +586,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJGigsApp/Preview Content\"";
-				DEVELOPMENT_TEAM = ZFXNNPT2T5;
+				DEVELOPMENT_TEAM = 893B7F9TL7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DJGigsApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos tu ubicación para guardar dónde se realiza el bolo.\nNecesitamos tu ubicación para guardar dónde se realiza el bolo.\nnecesatimos tu ubicacion para guardar donde se realiza el bolo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,9 +617,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJGigsApp/Preview Content\"";
-				DEVELOPMENT_TEAM = ZFXNNPT2T5;
+				DEVELOPMENT_TEAM = 893B7F9TL7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DJGigsApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos tu ubicación para guardar dónde se realiza el bolo.\nNecesitamos tu ubicación para guardar dónde se realiza el bolo.\nnecesatimos tu ubicacion para guardar donde se realiza el bolo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -607,7 +643,6 @@
 		3809ABC22EB36092005E541F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -627,7 +662,6 @@
 		3809ABC32EB36092005E541F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -647,7 +681,6 @@
 		3809ABC52EB36092005E541F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZFXNNPT2T5;
@@ -665,7 +698,6 @@
 		3809ABC62EB36092005E541F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZFXNNPT2T5;
