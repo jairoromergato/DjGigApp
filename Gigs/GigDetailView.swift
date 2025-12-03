@@ -12,10 +12,12 @@ struct GigDetailView: View {
     @State private var imageToDeleteIndex: Int? = nil
     @State private var showDeleteDialog = false
     @State private var showingAllImages = false
-
     @StateObject private var contactManager = ContactManager()
     @State private var showingPicker = false
     @State private var showingNewContact = false
+    @State private var showingCallSheet = false
+    @State private var phoneToCall: String? = nil
+
 
     var body: some View {
         ScrollView {
@@ -40,14 +42,6 @@ struct GigDetailView: View {
 
                     detailRow(title: "Pago",
                               value: gig.fee.formatted(.currency(code: "EUR")))
-                }
-
-                if !gig.notes.isEmpty {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Notas")
-                            .font(.title3.bold())
-                        Text(gig.notes)
-                    }
                 }
 
                 VStack(alignment: .leading, spacing: 12) {
@@ -116,6 +110,52 @@ struct GigDetailView: View {
                     }
                 }
                 
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Contactos del evento")
+                        .font(.title3.bold())
+
+                    if gig.contacts.isEmpty {
+                        Text("Sin contactos aún")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        ForEach(gig.contacts) { c in
+                            Button {
+                                if let phone = c.phone {
+                                    if let url = URL(string: "tel://\(phone.filter { $0.isNumber })") {
+                                        UIApplication.shared.open(url)
+                                    }
+                                }
+                            } label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .fill(Color(.systemGray6))
+                                        .shadow(color: .purple.opacity(0.3), radius: 6, x: 0, y: 3)
+
+                                    VStack(alignment: .leading, spacing: 6) {
+                                        Text(c.name)
+                                            .font(.headline)
+                                            .foregroundColor(.purple)
+
+                                        if let phone = c.phone {
+                                            Label(phone, systemImage: "phone.fill")
+                                                .foregroundColor(.secondary)
+                                        }
+
+                                        if let email = c.email {
+                                            Label(email, systemImage: "envelope.fill")
+                                                .foregroundColor(.secondary)
+                                        }
+                                    }
+                                    .padding()
+                                }
+                                .frame(maxWidth: .infinity)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+                .padding(.top, 10)
+                
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Notas")
                         .font(.title3.bold())
@@ -127,42 +167,6 @@ struct GigDetailView: View {
                         Text(gig.notes)
                     }
                 }
-
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Contactos del evento")
-                        .font(.title3.bold())
-
-                    if gig.contacts.isEmpty {
-                        Text("Sin contactos aún")
-                            .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(gig.contacts) { c in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(c.name)
-                                    .font(.headline)
-                                if let phone = c.phone {
-                                    Text(phone)
-                                }
-                                if let email = c.email {
-                                    Text(email)
-                                }
-                            }
-                            .padding(.vertical, 4)
-                        }
-                    }
-
-                    Button("Seleccionar desde agenda") {
-                        contactManager.requestAccess { granted in
-                            if granted { showingPicker = true }
-                        }
-                    }
-
-                    Button("Crear nuevo contacto") {
-                        showingNewContact = true
-                    }
-                }
-                .padding(.top, 10)
-
             }
             .padding()
         }
