@@ -14,7 +14,8 @@ final class Gig {
     var style: String
     var notes: String
     var images: [Data] = []
-
+    var latitude: Double?
+    var longitude: Double?
     
     init(
         id: UUID = UUID(),
@@ -25,7 +26,10 @@ final class Gig {
         durationMinutes: Int = 0,
         style: String = "",
         notes: String = "",
-       images: [Data] = []
+       images: [Data] = [],
+        latitude: Double? = nil,
+        longitude: Double? = nil
+        
 
     ) {
         self.id = id
@@ -37,6 +41,8 @@ final class Gig {
         self.style = style
         self.notes = notes
         self.images = images
+        self.latitude = latitude
+        self.longitude = longitude
 
     }
 }
