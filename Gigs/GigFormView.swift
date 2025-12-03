@@ -39,10 +39,10 @@ struct GigFormView: View {
             Section("Condiciones") {
                 TextField("Honorarios (€)", text: $feeText)
                     .keyboardType(.numberPad)
+
                 Section("Duración") {
                     DurationPickerInline(minutes: $durationMinutes)
 
-                    // Vista de apoyo (texto formateado)
                     HStack {
                         Text("Seleccionado")
                         Spacer()
@@ -77,14 +77,15 @@ struct GigFormView: View {
             }
         }
     }
-    
+
     private var isValid: Bool {
-        !eventName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        && !venue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        !eventName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        !venue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     private func save() {
         let fee = Double(feeText.filter { $0.isNumber }) ?? 0
+
         if let gig = gig {
             gig.date = date
             gig.eventName = eventName
@@ -94,19 +95,24 @@ struct GigFormView: View {
             gig.style = style
             gig.notes = notes
             onSave(gig)
+
         } else {
-            let newGig = Gig(date: date,
-                             eventName: eventName,
-                             venue: venue,
-                             fee: fee,
-                             durationMinutes: durationMinutes,
-                             style: style,
-                             notes: notes)
+            let newGig = Gig(
+                date: date,
+                eventName: eventName,
+                venue: venue,
+                fee: fee,
+                durationMinutes: durationMinutes,
+                style: style,
+                notes: notes
+            )
             onSave(newGig)
         }
+
         dismiss()
     }
 }
+
 private func durationText(_ minutes: Int) -> String {
     guard minutes > 0 else { return "0 min" }
     let h = minutes / 60

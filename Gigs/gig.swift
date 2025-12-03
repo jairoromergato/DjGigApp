@@ -3,6 +3,8 @@ import SwiftData
 
 @Model
 final class Gig {
+    @Relationship(deleteRule: .cascade)
+    var contacts: [GigContact] = []
     var id: UUID
     var date: Date
     var eventName: String
@@ -12,6 +14,7 @@ final class Gig {
     var style: String
     var notes: String
     var images: [Data] = []
+
     
     init(
         id: UUID = UUID(),
