@@ -32,6 +32,7 @@ struct CalendarView: View {
                 .padding(.bottom, 12)
             }
             .navigationTitle("Calendario")
+
             .sheet(isPresented: $showingNew) {
                 NavigationStack {
                     GigFormView { newGig in
@@ -40,16 +41,16 @@ struct CalendarView: View {
                     }
                 }
             }
+
             .sheet(item: $editingGig) { gig in
                 NavigationStack {
-                    GigFormView(gig: gig) { _ in
+                    GigFormView(gig: gig) { updatedGig in
                         try? context.save()
                     }
                 }
             }
         }
     }
-
 
     private var header: some View {
         HStack {
@@ -73,14 +74,15 @@ struct CalendarView: View {
         .padding(.top, 8)
     }
 
-
     private var daySummary: some View {
         VStack(alignment: .leading, spacing: 8) {
 
             HStack {
                 Text(vm.selectedDate, format: .dateTime.month().year())
                     .font(.headline)
+
                 Spacer()
+
                 Button {
                     showingNew = true
                 } label: {
@@ -137,8 +139,6 @@ struct CalendarView: View {
         .padding(.top, 8)
     }
 
-
-
     private func groupGigsByDay(_ gigs: [Gig]) -> [Date: [Gig]] {
         var dict: [Date: [Gig]] = [:]
         let cal = Calendar.current
@@ -152,11 +152,9 @@ struct CalendarView: View {
 
     private func gigsForMonth(_ date: Date, gigs: [Gig]) -> [Gig] {
         let cal = Calendar.current
-
         let startOfMonth = cal.date(from: cal.dateComponents([.year, .month], from: date))!
         let range = cal.range(of: .day, in: .month, for: date)!
         let endOfMonth = cal.date(byAdding: .day, value: range.count, to: startOfMonth)!
-
         return gigs.filter { $0.date >= startOfMonth && $0.date < endOfMonth }
     }
 }

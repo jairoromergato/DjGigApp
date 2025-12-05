@@ -229,8 +229,9 @@ struct GigFormView: View {
     
     private func save() {
         let fee = Double(feeText.filter { $0.isNumber }) ?? 0
-        
+
         if let gig = gig {
+            // EDITAR EXISTENTE
             gig.date = date
             gig.eventName = eventName
             gig.venue = venue
@@ -240,9 +241,11 @@ struct GigFormView: View {
             gig.notes = notes
             gig.latitude = latitude
             gig.longitude = longitude
-            
+
             onSave(gig)
-            
+
+            NotificationManager.shared.scheduleNotification(for: gig)
+
         } else {
             let newGig = Gig(
                 date: date,
@@ -253,12 +256,15 @@ struct GigFormView: View {
                 style: style,
                 notes: notes
             )
+
             newGig.latitude = latitude
             newGig.longitude = longitude
-            
+
             onSave(newGig)
+
+            NotificationManager.shared.scheduleNotification(for: newGig)
         }
-        
+
         dismiss()
     }
 }

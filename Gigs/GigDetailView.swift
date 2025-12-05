@@ -151,6 +151,7 @@ struct GigDetailView: View {
                                 .frame(maxWidth: .infinity)
                             }
                             .buttonStyle(.plain)
+                            .tint(AppTheme.accent)
                         }
                     }
                 }

@@ -2,9 +2,12 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
-    @Query (sort: \Gig.date) private var gigs: [Gig]
+    @Query(sort: \Gig.date) private var gigs: [Gig]
+
     @State private var vm = HomeViewModel()
     private let router = HomeRouter()
+
+    @StateObject private var navRouter = NavigationRouter()
 
     var body: some View {
         NavigationStack {
@@ -46,7 +49,23 @@ struct HomeView: View {
                 }
             }
             .navigationBarHidden(true)
+
+            .onAppear {
+                AppDelegate.router = navRouter
+            }
+
+            .onChange(of: navRouter.deepLinkGigID) { _, newID in
+                guard let id = newID else { return }
+                print("🔍 Buscando gig para deep link:", id)
+
+                if let gig = gigs.first(where: { $0.id == id }) {
+                    navRouter.deepLinkGigDestination = gig
+                }
+            }
+
+            .navigationDestination(item: $navRouter.deepLinkGigDestination) { gig in
+                GigDetailView(gig: gig)
+            }
         }
     }
 }
-
