@@ -7,8 +7,9 @@ struct FullScreenImageViewer: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var currentIndex: Int
-    @State private var scale: CGFloat = 1.0
-    @State private var lastScale: CGFloat = 1.0
+    @State private var scale: CGFloat = 1
+    @State private var lastScale: CGFloat = 1
+    @State private var offset: CGSize = .zero
 
     init(images: [UIImage], initialIndex: Int) {
         self.images = images
@@ -23,31 +24,49 @@ struct FullScreenImageViewer: View {
             TabView(selection: $currentIndex) {
                 ForEach(images.indices, id: \.self) { i in
                     GeometryReader { proxy in
-                        ScrollView([.vertical, .horizontal], showsIndicators: false) {
+                        let size = proxy.size
+
+                        Image(uiImage: images[i])
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: size.width, height: size.height)
+                            .scaleEffect(scale)
+                            .offset(offset)
+                            .animation(.easeInOut(duration: 0.2), value: scale)
+                            .animation(.easeInOut(duration: 0.2), value: offset)
                             
-                            Image(uiImage: images[i])
-                                .resizable()
-                                .scaledToFit()
-                                .scaleEffect(scale)
-                                .gesture(
-                                    MagnificationGesture()
-                                        .onChanged { value in
-                                            scale = lastScale * value
+                            .gesture(
+                                TapGesture(count: 2)
+                                    .onEnded { handleDoubleTap() }
+                            )
+
+                            .gesture(
+                                MagnificationGesture()
+                                    .onChanged { value in
+                                        let newScale = lastScale * value
+                                        scale = max(1, newScale)
+                                    }
+                                    .onEnded { _ in
+                                        lastScale = scale
+                                        if scale == 1 {
+                                            offset = .zero
                                         }
-                                        .onEnded { _ in
-                                            lastScale = scale
-                                        }
-                                )
-                                .frame(width: proxy.size.width,
-                                       height: proxy.size.height,
-                                       alignment: .center)
-                        }
+                                    }
+                            )
+
+                            .simultaneousGesture(
+                                scale > 1 ? dragGesture() : nil
+                            )
                     }
                     .tag(i)
                 }
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .tabViewStyle(.page(indexDisplayMode: .never))
             .ignoresSafeArea()
+            
+            .gesture(
+                scale > 1 ? DragGesture() : nil
+            )
 
             VStack {
                 HStack {
@@ -64,5 +83,30 @@ struct FullScreenImageViewer: View {
                 Spacer()
             }
         }
+    }
+
+    private func handleDoubleTap() {
+        if scale == 1 {
+            scale = 1.5
+            lastScale = 1.5
+        } else {
+            scale = 1
+            lastScale = 1
+            offset = .zero
+        }
+    }
+
+
+    private func dragGesture() -> some Gesture {
+        DragGesture()
+            .onChanged { value in
+                guard scale > 1 else { return }
+                offset = value.translation
+            }
+            .onEnded { _ in
+                if scale == 1 {
+                    offset = .zero
+                }
+            }
     }
 }
