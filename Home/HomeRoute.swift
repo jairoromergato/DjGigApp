@@ -10,8 +10,9 @@ struct HomeRouter {
         case .calendar:
             CalendarView()
         case .images:
-//            AllGigImagesView(gigs: gigs)
             GigAllImagesView(gig: nil)
+        case .redesSociales:
+            SocialView()
         case .soon:
             Text("Próximamente ✨")
                 .font(.title)

@@ -5,6 +5,7 @@ final class HomeViewModel: ObservableObject {
         .gigs,
         .calendar,
         .images(id: nil),
+        .redesSociales,
         .soon
     ]
 }

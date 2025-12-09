@@ -1,5 +1,6 @@
 import SwiftUI
 
+
 struct NavigationOptionSheet: View {
     let latitude: Double
     let longitude: Double
@@ -8,7 +9,6 @@ struct NavigationOptionSheet: View {
         VStack(spacing: 20) {
             Text("Abrir en…")
                 .font(.title3.bold())
-            
             Button("Apple Maps") {
                 openAppleMaps()
             }.buttonStyle(.borderedProminent)

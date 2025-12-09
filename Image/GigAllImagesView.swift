@@ -6,8 +6,6 @@ struct GigAllImagesView: View {
     @State var images: [Data] = []
     @Environment(\.modelContext) var context
 
-    // 🔥 visor
-    // Wrapper to make UIImage identifiable for fullScreenCover(item:)
     private struct IdentifiedImage: Identifiable, Equatable {
         let id = UUID()
         let image: UIImage
@@ -15,7 +13,6 @@ struct GigAllImagesView: View {
     }
 
     @State private var selectedImage: IdentifiedImage? = nil
-//    @State private var showingFullScreen = false
 
     private let columns = [
         GridItem(.flexible()),
@@ -35,7 +32,6 @@ struct GigAllImagesView: View {
                             .cornerRadius(12)
                             .onTapGesture {
                                 selectedImage = IdentifiedImage(image: uiImage, index: index)
-//                                showingFullScreen = true
                             }
                     }
                 }
