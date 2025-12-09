@@ -231,7 +231,6 @@ struct GigFormView: View {
         let fee = Double(feeText.filter { $0.isNumber }) ?? 0
 
         if let gig = gig {
-            // EDITAR EXISTENTE
             gig.date = date
             gig.eventName = eventName
             gig.venue = venue

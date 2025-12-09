@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32B89EBD2EE2F7630007AB04 /* FullScreenImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B89EBC2EE2F7630007AB04 /* FullScreenImageViewer.swift */; };
 		32F1F6B52EDED1E1003A3CBD /* MapsPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F6B42EDED1E1003A3CBD /* MapsPoint.swift */; };
 		32F1F6B72EDED372003A3CBD /* NavigationOptionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F6B62EDED372003A3CBD /* NavigationOptionSheet.swift */; };
 		32F1F6B92EDED64C003A3CBD /* GigMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F1F6B82EDED64C003A3CBD /* GigMapsView.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		32B89EB42EE2C5F70007AB04 /* DJGigsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DJGigsApp.entitlements; sourceTree = "<group>"; };
+		32B89EBC2EE2F7630007AB04 /* FullScreenImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewer.swift; sourceTree = "<group>"; };
 		32F1F6B42EDED1E1003A3CBD /* MapsPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsPoint.swift; sourceTree = "<group>"; };
 		32F1F6B62EDED372003A3CBD /* NavigationOptionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationOptionSheet.swift; sourceTree = "<group>"; };
 		32F1F6B82EDED64C003A3CBD /* GigMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigMapsView.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				388F91782ED5BF2A003D162D /* ImagesView.swift */,
 				32F1F6CC2EDF282F003A3CBD /* GigAllImagesView.swift */,
+				32B89EBC2EE2F7630007AB04 /* FullScreenImageViewer.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				38098A4C2EC1279D00BE80B0 /* HomeView.swift in Sources */,
 				38B9902B2ED9AAD7003B758B /* GigDetailView.swift in Sources */,
 				38098A5F2EC2189200BE80B0 /* SplashContainerView.swift in Sources */,
+				32B89EBD2EE2F7630007AB04 /* FullScreenImageViewer.swift in Sources */,
 				32F1F6CD2EDF282F003A3CBD /* GigAllImagesView.swift in Sources */,
 				32F1F6B92EDED64C003A3CBD /* GigMapsView.swift in Sources */,
 				38098A612EC218B900BE80B0 /* AnimatedSplashView.swift in Sources */,

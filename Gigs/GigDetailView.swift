@@ -3,6 +3,12 @@ import SwiftData
 import Contacts
 import ContactsUI
 
+struct ImageIdentifiable: Identifiable {
+    let id = UUID()
+    let images: [UIImage]
+    let index: Int
+}
+
 struct GigDetailView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -15,9 +21,8 @@ struct GigDetailView: View {
     @StateObject private var contactManager = ContactManager()
     @State private var showingPicker = false
     @State private var showingNewContact = false
-    @State private var showingCallSheet = false
-    @State private var phoneToCall: String? = nil
 
+    @State private var selectedImage: ImageIdentifiable? = nil
 
     var body: some View {
         ScrollView {
@@ -44,36 +49,43 @@ struct GigDetailView: View {
                               value: gig.fee.formatted(.currency(code: "EUR")))
                 }
 
+
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Imágenes")
                         .font(.title3.bold())
-                    
-                    let images = gig.images
-                    
-                    if images.isEmpty {
+
+                    let imagesData = gig.images
+                    let imagesUI = imagesData.compactMap { UIImage(data: $0) } // todas las UIImages
+
+                    if imagesData.isEmpty {
                         Text("Sin imágenes")
                             .foregroundStyle(.secondary)
                     } else {
-                        
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
-                                
-                                ForEach(Array(images.prefix(5).enumerated()), id: \.offset) { index, data in
+
+                                ForEach(Array(imagesData.prefix(5).enumerated()), id: \.offset) { index, data in
+
                                     if let uiImage = UIImage(data: data) {
                                         Image(uiImage: uiImage)
                                             .resizable()
                                             .scaledToFill()
                                             .frame(width: 120, height: 120)
                                             .clipShape(RoundedRectangle(cornerRadius: 12))
-                                        
+                                            .onTapGesture {
+                                                selectedImage = ImageIdentifiable(
+                                                    images: imagesUI,
+                                                    index: index
+                                                )
+                                            }
                                             .onLongPressGesture {
                                                 imageToDeleteIndex = index
                                                 showDeleteDialog = true
                                             }
                                     }
                                 }
-                                
-                                if images.count > 5 {
+
+                                if imagesData.count > 5 {
                                     Button {
                                         showingAllImages = true
                                     } label: {
@@ -90,26 +102,22 @@ struct GigDetailView: View {
                                         .clipShape(RoundedRectangle(cornerRadius: 12))
                                     }
                                 }
-                                
                             }
                             .padding(.vertical, 6)
                         }
                     }
                 }
-                
+
+
                 VStack(alignment: .leading, spacing:12) {
-                    Text("Ubicacion")
-                        .font(.title3.bold())
                     if let lat = gig.latitude, let lon = gig.longitude {
-                        VStack(alignment: .leading, spacing: 12) {
-                            GigMapView(latitude: lat, longitude: lon)
-                        }
+                        GigMapView(latitude: lat, longitude: lon)
                     } else {
                         Text("Sin ubicación definida")
                             .foregroundStyle(.secondary)
                     }
                 }
-                
+
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Contactos del evento")
                         .font(.title3.bold())
@@ -120,10 +128,9 @@ struct GigDetailView: View {
                     } else {
                         ForEach(gig.contacts) { c in
                             Button {
-                                if let phone = c.phone {
-                                    if let url = URL(string: "tel://\(phone.filter { $0.isNumber })") {
-                                        UIApplication.shared.open(url)
-                                    }
+                                if let phone = c.phone,
+                                   let url = URL(string: "tel://\(phone.filter { $0.isNumber })") {
+                                    UIApplication.shared.open(url)
                                 }
                             } label: {
                                 ZStack {
@@ -151,16 +158,15 @@ struct GigDetailView: View {
                                 .frame(maxWidth: .infinity)
                             }
                             .buttonStyle(.plain)
-                            .tint(AppTheme.accent)
                         }
                     }
                 }
                 .padding(.top, 10)
-                
+
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Notas")
                         .font(.title3.bold())
-                    
+
                     if gig.notes.isEmpty {
                         Text("Sin notas")
                             .foregroundStyle(.secondary)
@@ -171,45 +177,37 @@ struct GigDetailView: View {
             }
             .padding()
         }
+
         .navigationTitle("Detalles del Bolo")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Editar") {
-                    showingEdit = true
-                }
-            }
+
+        .sheet(item: $selectedImage) { item in
+            FullScreenImageViewer(images: item.images, initialIndex: item.index)
         }
+
         .sheet(isPresented: $showingAllImages) {
-                GigAllImagesView(gig: gig)
-            }
-        .fullScreenCover(isPresented: $showingEdit) {
+            GigAllImagesView(gig: gig)
+        }
+
+        .sheet(isPresented: $showingEdit) {
             NavigationStack {
-                GigFormView(gig: gig) { _ in
-                    try? context.save()
-                }
+                GigFormView(gig: gig) { _ in try? context.save() }
             }
         }
 
         .sheet(isPresented: $showingPicker) {
             ContactPickerView(manager: contactManager)
-                .onChange(of: contactManager.selectedContact) { contact in
-                    guard let c = contact else { return }
-
-                    let newC = GigContact(
-                        id: c.identifier,
-                        name: CNContactFormatter.string(from: c, style: .fullName) ?? "Contacto",
-                        phone: c.phoneNumbers.first?.value.stringValue,
-                        email: (c.emailAddresses.first?.value as String?)
-                    )
-
-                    gig.contacts.append(newC)
-                    try? context.save()
-                }
         }
 
         .sheet(isPresented: $showingNewContact) {
             NewContactEditor()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button ("Editar"){
+                    showingEdit = true
+                }
+            }
         }
     }
 
