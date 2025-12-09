@@ -177,7 +177,8 @@ struct GigDetailView: View {
             }
             .padding()
         }
-
+        .appBackground()
+        .scrollContentBackground(.hidden)
         .navigationTitle("Detalles del Bolo")
         .navigationBarTitleDisplayMode(.inline)
 

@@ -42,6 +42,7 @@ struct GigListView: View {
                         .onDelete(perform: delete)
                     }
                     .listStyle(.insetGrouped)
+                    .scrollContentBackground(.hidden)
                 }
             }
             .navigationTitle("Bolos")
@@ -62,6 +63,7 @@ struct GigListView: View {
                     }
                 }
             }
+            .appBackground()
         }
     }
 

@@ -1,6 +1,7 @@
 import SwiftUI
 
 enum AppTheme {
+    /// morado azulado
     static let accent        = Color(hex: 0x6C63FF) // morado azulado
     static let accentAlt     = Color(hex: 0x4F46E5) // índigo
     static let bg            = Color(hex: 0x0B1020) // azul muy oscuro

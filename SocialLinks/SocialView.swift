@@ -45,10 +45,11 @@ struct SocialView: View {
             }
             .padding()
             .navigationTitle("Redes sociales")
+            .appBackground()
+
         }
     }
 }
-
 #Preview {
     SocialView()
 }
