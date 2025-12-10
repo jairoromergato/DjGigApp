@@ -39,6 +39,18 @@
 		3809ABD22EB38414005E541F /* GigFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD12EB38414005E541F /* GigFormView.swift */; };
 		3809ABD42EB3878F005E541F /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD32EB3878F005E541F /* AppTheme.swift */; };
 		3809ABD62EB387BE005E541F /* ThemedStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809ABD52EB387BE005E541F /* ThemedStyles.swift */; };
+		3837AE4B2EE976580075E693 /* SocialPlatformModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE412EE976580075E693 /* SocialPlatformModels.swift */; };
+		3837AE4C2EE976580075E693 /* SocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE422EE976580075E693 /* SocialView.swift */; };
+		3837AE4D2EE976580075E693 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE442EE976580075E693 /* ContactManager.swift */; };
+		3837AE4E2EE976580075E693 /* GigContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE452EE976580075E693 /* GigContact.swift */; };
+		3837AE4F2EE976580075E693 /* NewConactEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE462EE976580075E693 /* NewConactEditor.swift */; };
+		3837AE502EE976580075E693 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE482EE976580075E693 /* NotificationManager.swift */; };
+		3837AE512EE976580075E693 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE492EE976580075E693 /* NavigationRoute.swift */; };
+		3837AE522EE976580075E693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE4A2EE976580075E693 /* AppDelegate.swift */; };
+		3837AE552EE976610075E693 /* BackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE542EE976610075E693 /* BackgroundModifier.swift */; };
+		3837AE572EE976960075E693 /* FullScreenImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE562EE976960075E693 /* FullScreenImageViewer.swift */; };
+		3837AE592EE976B30075E693 /* MapsButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE582EE976B30075E693 /* MapsButtonStyle.swift */; };
+		3837AE5B2EE977190075E693 /* MapsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837AE5A2EE977190075E693 /* MapsModels.swift */; };
 		388F91792ED5BF2A003D162D /* ImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388F91782ED5BF2A003D162D /* ImagesView.swift */; };
 		38B9902B2ED9AAD7003B758B /* GigDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9902A2ED9AAD7003B758B /* GigDetailView.swift */; };
 		38B9902D2ED9ADC1003B758B /* GigImagesGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9902C2ED9ADC1003B758B /* GigImagesGalleryView.swift */; };
@@ -98,6 +110,18 @@
 		3809ABD12EB38414005E541F /* GigFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigFormView.swift; sourceTree = "<group>"; };
 		3809ABD32EB3878F005E541F /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		3809ABD52EB387BE005E541F /* ThemedStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedStyles.swift; sourceTree = "<group>"; };
+		3837AE412EE976580075E693 /* SocialPlatformModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialPlatformModels.swift; sourceTree = "<group>"; };
+		3837AE422EE976580075E693 /* SocialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialView.swift; sourceTree = "<group>"; };
+		3837AE442EE976580075E693 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
+		3837AE452EE976580075E693 /* GigContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GigContact.swift; sourceTree = "<group>"; };
+		3837AE462EE976580075E693 /* NewConactEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewConactEditor.swift; sourceTree = "<group>"; };
+		3837AE482EE976580075E693 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		3837AE492EE976580075E693 /* NavigationRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
+		3837AE4A2EE976580075E693 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3837AE542EE976610075E693 /* BackgroundModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundModifier.swift; sourceTree = "<group>"; };
+		3837AE562EE976960075E693 /* FullScreenImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewer.swift; sourceTree = "<group>"; };
+		3837AE582EE976B30075E693 /* MapsButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsButtonStyle.swift; sourceTree = "<group>"; };
+		3837AE5A2EE977190075E693 /* MapsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsModels.swift; sourceTree = "<group>"; };
 		388F91782ED5BF2A003D162D /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
 		38B9902A2ED9AAD7003B758B /* GigDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigDetailView.swift; sourceTree = "<group>"; };
 		38B9902C2ED9ADC1003B758B /* GigImagesGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigImagesGalleryView.swift; sourceTree = "<group>"; };
@@ -132,8 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				32F1F6B42EDED1E1003A3CBD /* MapsPoint.swift */,
+				3837AE5A2EE977190075E693 /* MapsModels.swift */,
 				32F1F6B62EDED372003A3CBD /* NavigationOptionSheet.swift */,
 				32F1F6B82EDED64C003A3CBD /* GigMapsView.swift */,
+				3837AE582EE976B30075E693 /* MapsButtonStyle.swift */,
 				32F1F6BA2EDEDD5A003A3CBD /* LocationPickerView.swift */,
 				32F1F6BE2EDEE4FF003A3CBD /* LocationManager.swift */,
 			);
@@ -166,6 +192,9 @@
 		3809AB8C2EB3608A005E541F = {
 			isa = PBXGroup;
 			children = (
+				3837AE432EE976580075E693 /* contact */,
+				3837AE472EE976580075E693 /* Notifications */,
+				3837AE402EE976580075E693 /* SocialLinks */,
 				3809AB982EB3608A005E541F /* DJGigsApp.swift */,
 				32F1F6B12EDECEBC003A3CBD /* Maps */,
 				388F91772ED5BF0F003D162D /* Image */,
@@ -243,6 +272,7 @@
 		3809ABCE2EB381A5005E541F /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3837AE532EE976610075E693 /* Modifiers */,
 				3809ABD32EB3878F005E541F /* AppTheme.swift */,
 				3809ABD52EB387BE005E541F /* ThemedStyles.swift */,
 				38098A482EC125F900BE80B0 /* DurationPickerInLine.swift */,
@@ -252,9 +282,47 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		3837AE402EE976580075E693 /* SocialLinks */ = {
+			isa = PBXGroup;
+			children = (
+				3837AE412EE976580075E693 /* SocialPlatformModels.swift */,
+				3837AE422EE976580075E693 /* SocialView.swift */,
+			);
+			path = SocialLinks;
+			sourceTree = "<group>";
+		};
+		3837AE432EE976580075E693 /* contact */ = {
+			isa = PBXGroup;
+			children = (
+				3837AE442EE976580075E693 /* ContactManager.swift */,
+				3837AE452EE976580075E693 /* GigContact.swift */,
+				3837AE462EE976580075E693 /* NewConactEditor.swift */,
+			);
+			path = contact;
+			sourceTree = "<group>";
+		};
+		3837AE472EE976580075E693 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3837AE482EE976580075E693 /* NotificationManager.swift */,
+				3837AE492EE976580075E693 /* NavigationRoute.swift */,
+				3837AE4A2EE976580075E693 /* AppDelegate.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		3837AE532EE976610075E693 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				3837AE542EE976610075E693 /* BackgroundModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		388F91772ED5BF0F003D162D /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				3837AE562EE976960075E693 /* FullScreenImageViewer.swift */,
 				388F91782ED5BF2A003D162D /* ImagesView.swift */,
 				32F1F6CC2EDF282F003A3CBD /* GigAllImagesView.swift */,
 			);
@@ -392,14 +460,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3809ABA22EB36091005E541F /* Persistence.swift in Sources */,
+				3837AE4D2EE976580075E693 /* ContactManager.swift in Sources */,
+				3837AE522EE976580075E693 /* AppDelegate.swift in Sources */,
+				3837AE4C2EE976580075E693 /* SocialView.swift in Sources */,
 				3809AB9B2EB3608A005E541F /* ContentView.swift in Sources */,
 				32F1F6BF2EDEE4FF003A3CBD /* LocationManager.swift in Sources */,
 				38098A502EC127DC00BE80B0 /* HomeRoute.swift in Sources */,
 				32F1F6BB2EDEDD5A003A3CBD /* LocationPickerView.swift in Sources */,
+				3837AE592EE976B30075E693 /* MapsButtonStyle.swift in Sources */,
 				38098A592EC12A5200BE80B0 /* CalendarView.swift in Sources */,
 				3809AB992EB3608A005E541F /* DJGigsApp.swift in Sources */,
 				3809ABD42EB3878F005E541F /* AppTheme.swift in Sources */,
 				38B9902D2ED9ADC1003B758B /* GigImagesGalleryView.swift in Sources */,
+				3837AE512EE976580075E693 /* NavigationRoute.swift in Sources */,
 				38098A5B2EC12A8800BE80B0 /* CalendarViewModel.swift in Sources */,
 				3809ABA52EB36091005E541F /* DJGigsApp.xcdatamodeld in Sources */,
 				388F91792ED5BF2A003D162D /* ImagesView.swift in Sources */,
@@ -409,17 +482,24 @@
 				38098A5F2EC2189200BE80B0 /* SplashContainerView.swift in Sources */,
 				32F1F6CD2EDF282F003A3CBD /* GigAllImagesView.swift in Sources */,
 				32F1F6B92EDED64C003A3CBD /* GigMapsView.swift in Sources */,
+				3837AE572EE976960075E693 /* FullScreenImageViewer.swift in Sources */,
 				38098A612EC218B900BE80B0 /* AnimatedSplashView.swift in Sources */,
 				3809ABD22EB38414005E541F /* GigFormView.swift in Sources */,
 				38098A492EC125F900BE80B0 /* DurationPickerInLine.swift in Sources */,
 				3809ABD62EB387BE005E541F /* ThemedStyles.swift in Sources */,
 				38098A5D2EC12AAF00BE80B0 /* MonthGrid.swift in Sources */,
 				38098A542EC1280000BE80B0 /* HomeActionButton.swift in Sources */,
+				3837AE5B2EE977190075E693 /* MapsModels.swift in Sources */,
 				38098A562EC1280A00BE80B0 /* HomeString.swift in Sources */,
 				32F1F6B52EDED1E1003A3CBD /* MapsPoint.swift in Sources */,
 				38098A522EC127EC00BE80B0 /* HomeDestination.swift in Sources */,
 				3809ABC92EB36127005E541F /* gig.swift in Sources */,
+				3837AE502EE976580075E693 /* NotificationManager.swift in Sources */,
+				3837AE4B2EE976580075E693 /* SocialPlatformModels.swift in Sources */,
 				3809ABD02EB381CA005E541F /* GigListView.swift in Sources */,
+				3837AE4E2EE976580075E693 /* GigContact.swift in Sources */,
+				3837AE4F2EE976580075E693 /* NewConactEditor.swift in Sources */,
+				3837AE552EE976610075E693 /* BackgroundModifier.swift in Sources */,
 				38098A4E2EC127CA00BE80B0 /* homeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,7 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJGigsApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 893B7F9TL7;
+				DEVELOPMENT_TEAM = ZFXNNPT2T5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DJGigsApp/Info.plist;
@@ -617,7 +697,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DJGigsApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 893B7F9TL7;
+				DEVELOPMENT_TEAM = ZFXNNPT2T5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DJGigsApp/Info.plist;
