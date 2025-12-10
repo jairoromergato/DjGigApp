@@ -1,19 +1,29 @@
 import SwiftUI
 
-
 struct NavigationOptionSheet: View {
     let latitude: Double
     let longitude: Double
     
     var body: some View {
-        VStack(spacing: 16) { 
+        VStack(spacing: 20) {
             Text("Abrir en…")
                 .font(.title3.bold())
-                .padding(.bottom, 8)
+                .padding(.top, 6)
             
             ForEach(MapApp.allCases) { app in
-                Button(app.name) {
+                Button {
                     app.open(latitude: latitude, longitude: longitude)
+                } label: {
+                    Label {
+                        Text(app.name)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    } icon: {
+                        Image(app.iconMaps)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 28, height: 28)
+                    }
                 }
                 .buttonStyle(MapButtonStyle())
             }

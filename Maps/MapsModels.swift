@@ -10,9 +10,17 @@ enum MapApp: CaseIterable, Identifiable {
     
     var name: String {
         switch self {
-        case .apple: return "Apple Maps"
-        case .google: return "Google Maps"
+        case .apple: return "Apple"
+        case .google: return "Google"
         case .waze:  return "Waze"
+        }
+    }
+    
+    var iconMaps: String{
+        switch self {
+        case .apple: return "applemapsLogo"
+        case .google: return "googlemapsLogo"
+        case .waze: return "wazeLogo"
         }
     }
     
