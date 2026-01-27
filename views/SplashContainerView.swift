@@ -17,7 +17,7 @@ struct SplashContainerView: View {
                 AnimatedSplashView(showText: true)
                     .transition(.opacity)
             case .done:
-                HomeView()
+                AuthGateView()
                     .transition(.opacity)
             }
         }
