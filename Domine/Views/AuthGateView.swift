@@ -27,26 +27,37 @@ struct AuthGateView: View {
 
 final class FakeAuthRepository: AuthRepository {
 
-    private var storedUser: User?
+    private var users: [String: String] = [:]
+    private var current: User?
 
     func currentUser() async -> User? {
-        storedUser
+        current
     }
 
     func login(email: String, password: String) async throws -> User {
-        let user = User(id: UUID().uuidString, email: email)
-        storedUser = user
+        guard let storedPassword = users[email] else {
+            throw AuthError.emailNotRegistered
+        }
+
+        guard storedPassword == password else {
+            throw AuthError.invalidCredentials
+        }
+
+        let user = User(id: email, email: email)
+        current = user
         return user
     }
 
     func register(email: String, password: String) async throws -> User {
-        let user = User(id: UUID().uuidString, email: email)
-        storedUser = user
+        users[email] = password
+        let user = User(id: email, email: email)
+        current = user
         return user
     }
 
     func logout() async throws {
-        storedUser = nil
+        current = nil
     }
 }
+
 

@@ -30,3 +30,21 @@ final class DefaultAuthUseCase: AuthUseCase {
     }
 }
 
+final class PreviewAuthUseCase: AuthUseCase {
+    func currentUser() async -> User? {
+        nil
+    }
+    
+    func login(email: String, password: String) async throws -> User {
+        User(id: "id", email: "email")
+    }
+    
+    func register(email: String, password: String) async throws -> User {
+        User(id: "id", email: "email")
+    }
+    
+    func logout() async throws {
+    }
+    
+    
+}
