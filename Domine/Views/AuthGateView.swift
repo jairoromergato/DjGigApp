@@ -47,14 +47,12 @@ final class FakeAuthRepository: AuthRepository {
         current = user
         return user
     }
-
     func register(email: String, password: String) async throws -> User {
         users[email] = password
         let user = User(id: email, email: email)
         current = user
         return user
     }
-
     func logout() async throws {
         current = nil
     }

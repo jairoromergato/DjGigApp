@@ -78,7 +78,6 @@ enum SocialPlatform: String, CaseIterable, Identifiable {
         case .spotify: return "https://open.spotify.com/"
         }
     }
-    
     func open() {
         if let scheme = appScheme,
            let schemeURL = URL(string: scheme),
@@ -91,8 +90,7 @@ enum SocialPlatform: String, CaseIterable, Identifiable {
             UIApplication.shared.open(url)
         }
     }
-    
-    var textColor: Color {
+        var textColor: Color {
         switch self {
         case .beatport: .black
         default: .white
